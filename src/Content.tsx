@@ -3,6 +3,7 @@ import {Breadcrumbs, Drawer, Grid, Link, Paper, Typography,} from "@material-ui/
 import useStyles from "./useStyles";
 import Toolbar from "./Toolbar";
 import elements from "./image/elements";
+import {FormattedHTMLMessage} from "react-intl";
 
 let Content: React.FC = (props: any) => {
     const classes = useStyles();
@@ -46,8 +47,10 @@ let Content: React.FC = (props: any) => {
                         return (
                             <Grid key={name} item onClick={handleClick2}>
                                 <Paper className={classes.paper}>
-                                    <img style={{maxWidth: 64}} src={src} alt={"w"}/>
-                                    <Typography>{name}</Typography>
+                                    <img style={{maxWidth: 64}} src={src} alt={name}/>
+                                    <Typography variant="caption" display="block" gutterBottom>
+                                        <FormattedHTMLMessage id={`STRINGS.ELEMENTS.${name}.NAME`.toUpperCase()}/>
+                                    </Typography>
                                 </Paper>
                             </Grid>
                         )
