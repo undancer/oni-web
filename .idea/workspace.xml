@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12119f94-bd2c-4298-b2c5-f180268f4466" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/config_env.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/po2json.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/strings.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Content.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Detail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Detail.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/useStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/useStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +132,7 @@
       <option name="presentableId" value="Default" />
       <updated>1577159431813</updated>
       <workItem from="1577159433219" duration="2954000" />
-      <workItem from="1577170634969" duration="22906000" />
+      <workItem from="1577170634969" duration="26530000" />
     </task>
     <servers />
   </component>

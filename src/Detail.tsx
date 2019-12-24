@@ -1,7 +1,20 @@
 import React from "react";
-import {Divider, Drawer, List, ListItem, ListItemIcon, ListItemText} from "@material-ui/core";
-import {Inbox as InboxIcon, Mail as MailIcon} from "@material-ui/icons";
+import {
+    Card,
+    CardContent,
+    CardHeader,
+    Chip,
+    Divider,
+    Drawer,
+    ExpansionPanel,
+    ExpansionPanelDetails,
+    List,
+    ListItem,
+    Typography
+} from "@material-ui/core";
 import useStyles from "./useStyles";
+import {FormattedHTMLMessage} from "react-intl";
+import elements from "./image/elements";
 
 let Detail: React.FC = () => {
     let classes = useStyles();
@@ -17,22 +30,51 @@ let Detail: React.FC = () => {
             <div className={classes.toolbar}/>
             <Divider/>
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}</ListItemIcon>
-                        <ListItemText primary={text}/>
-                    </ListItem>
-                ))}
+                <ListItem>
+                    <Card style={{margin: 8, justifyContent: "center"}}>
+                        <CardHeader>
+                            <Typography variant="caption" display="block" gutterBottom>
+                                <FormattedHTMLMessage id={`STRINGS.ELEMENTS.CUPRITE.NAME`.toUpperCase()}/>
+                            </Typography>
+                        </CardHeader>
+                        <CardContent>
+                            <img style={{maxWidth: 256, margin: "auto", display: "block"}} src={elements.cuprite}
+                                 alt={'algae'}/>
+                            <Typography variant="caption" display="block">
+                                <FormattedHTMLMessage id={`STRINGS.ELEMENTS.CUPRITE.DESC`.toUpperCase()}/>
+                            </Typography>
+                            <ListItem className={classes.chip} style={{justifyContent: "center"}}>
+                                <Chip variant="outlined" size="small" label="Basic"/>
+                                <Chip variant="outlined" size="small" label="Basic"/>
+                                <Chip variant="outlined" size="small" label="Basic"/>
+                            </ListItem>
+                        </CardContent>
+                    </Card>
+                </ListItem>
+                <ListItem>
+                    <div>
+                        <ExpansionPanel expanded={false}>
+                            <ExpansionPanelDetails>
+                                <Typography>E1</Typography>
+                                <Typography>E2</Typography>
+                            </ExpansionPanelDetails>
+                        </ExpansionPanel>
+                        <ExpansionPanel expanded={false}>
+                            <ExpansionPanelDetails>
+                                <Typography>E1</Typography>
+                                <Typography>E2</Typography>
+                            </ExpansionPanelDetails>
+                        </ExpansionPanel>
+                        <ExpansionPanel expanded={true}>
+                            <ExpansionPanelDetails>
+                                <Typography>E1</Typography>
+                                <Typography>E2</Typography>
+                            </ExpansionPanelDetails>
+                        </ExpansionPanel>
+                    </div>
+                </ListItem>
             </List>
-            <Divider/>
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}</ListItemIcon>
-                        <ListItemText primary={text}/>
-                    </ListItem>
-                ))}
-            </List>
+
         </Drawer>
     )
 };

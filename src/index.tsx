@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {FormattedHTMLMessage, IntlProvider} from "react-intl";
+import {IntlProvider} from "react-intl";
 import * as serviceWorker from './serviceWorker';
 import languages from "./config/strings";
 

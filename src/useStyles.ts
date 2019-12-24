@@ -112,6 +112,11 @@ const useStyles = makeStyles((theme: Theme) =>
             color: theme.palette.text.secondary,
             wordBreak: 'break-all'
         },
+        chip: {
+            '& > *': {
+                margin: theme.spacing(1 / 2),
+            },
+        },
     }),
 );
 export default useStyles;
