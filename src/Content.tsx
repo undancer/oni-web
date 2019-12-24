@@ -1,25 +1,18 @@
 import React, {MouseEventHandler} from "react";
-import {
-    Breadcrumbs,
-    Drawer,
-    Link,
-    Paper,
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableHead,
-    TableRow,
-    Typography
-} from "@material-ui/core";
+import {Breadcrumbs, Drawer, Grid, Link, Paper, Typography,} from "@material-ui/core";
 import useStyles from "./useStyles";
 import Toolbar from "./Toolbar";
+import elements from "./image/elements";
 
 let Content: React.FC = (props: any) => {
     const classes = useStyles();
 
-    const handleClick: MouseEventHandler<any> = (event) => {
+    const handleClick1: MouseEventHandler<any> = (event) => {
         event.defaultPrevented = false;
+    };
+
+    const handleClick2: MouseEventHandler<any> = (event) => {
+        console.log("clicked");
     };
 
     return (
@@ -27,10 +20,10 @@ let Content: React.FC = (props: any) => {
             <div className={classes.toolbar}/>
 
             <Breadcrumbs aria-label="breadcrumb">
-                <Link color="inherit" href="/" onClick={handleClick}>
+                <Link color="inherit" href="/" onClick={handleClick1}>
                     Material-UI
                 </Link>
-                <Link color="inherit" href="/getting-started/installation/" onClick={handleClick}>
+                <Link color="inherit" href="/getting-started/installation/" onClick={handleClick1}>
                     Core
                 </Link>
                 <Typography color="textPrimary">Breadcrumb</Typography>
@@ -38,61 +31,31 @@ let Content: React.FC = (props: any) => {
 
             <Toolbar></Toolbar>
 
-
-            <Paper>
-                <TableContainer>
-                    <Table>
-                        <TableHead>
-                            <TableRow>
-                                <TableCell>name</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            <TableRow>
-                                <TableCell>ts</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>ts</TableCell>
-                            </TableRow>
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            </Paper>
-
             <Drawer/>
 
-            <Paper>
-                <TableContainer>
-                    <Table>
-                        <TableHead>
-                            <TableRow>
-                                <TableCell>name</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            <TableRow>
-                                <TableCell>ts</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>ts</TableCell>
-                            </TableRow>
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            </Paper>
+            <Grid container
+                  direction="row"
+                  justify="center"
+                  alignItems="flex-start"
+                  spacing={1}>
+                {
 
-            <Typography paragraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-                facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-                gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-                donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-                adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-                Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-                imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-                arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-                donec massa sapien faucibus et molestie ac.
-            </Typography>
+                    Object.keys(elements).map(name => {
+                        // @ts-ignore
+                        let src = elements[name];
+                        return (
+                            <Grid key={name} item onClick={handleClick2}>
+                                <Paper className={classes.paper}>
+                                    <img style={{maxWidth: 64}} src={src} alt={"w"}/>
+                                    <Typography>{name}</Typography>
+                                </Paper>
+                            </Grid>
+                        )
+                    })
+                }
+
+            </Grid>
+
             <Typography paragraph>
                 Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
                 facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac

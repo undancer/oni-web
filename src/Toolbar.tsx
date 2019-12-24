@@ -2,7 +2,6 @@ import React from "react";
 import {
     Divider,
     FormControl,
-    FormControlLabel,
     Grid,
     IconButton,
     InputBase,
@@ -86,30 +85,34 @@ let Toolbar: React.FC = (props: any) => {
                 </FormControl>
             </Grid>
             <Grid item>
-                <Paper component="form" className={classes.root2}>
-                    <IconButton className={classes.iconButton} aria-label="menu">
-                        <MenuIcon/>
-                    </IconButton>
-                    <InputBase
-                        className={classes.input}
-                        placeholder="Search Google Maps"
-                        inputProps={{'aria-label': 'search google maps'}}
-                    />
-                    <IconButton type="submit" className={classes.iconButton} aria-label="search">
-                        <SearchIcon/>
-                    </IconButton>
-                    <Divider className={classes.divider} orientation="vertical"/>
-                    <IconButton color="primary" className={classes.iconButton} aria-label="directions">
-                        <DirectionsIcon/>
-                    </IconButton>
-                </Paper>
+                <Grid container direction="row" spacing={2}>
+                    <Grid item>
+                        <ToggleButtonGroup size="medium" value={alignment} exclusive onChange={handleChange2}>
+                            {children}
+                        </ToggleButtonGroup>
+                    </Grid>
+                    <Grid item>
+                        <Paper component="form" className={classes.root2}>
+                            <IconButton className={classes.iconButton} aria-label="menu">
+                                <MenuIcon/>
+                            </IconButton>
+                            <InputBase
+                                className={classes.input}
+                                placeholder="Search Google Maps"
+                                inputProps={{'aria-label': 'search google maps'}}
+                            />
+                            <IconButton type="submit" className={classes.iconButton} aria-label="search">
+                                <SearchIcon/>
+                            </IconButton>
+                            <Divider className={classes.divider} orientation="vertical"/>
+                            <IconButton color="primary" className={classes.iconButton} aria-label="directions">
+                                <DirectionsIcon/>
+                            </IconButton>
+                        </Paper>
+                    </Grid>
+                </Grid>
             </Grid>
             <Grid item>
-                <FormControl>
-                </FormControl>
-                <ToggleButtonGroup size="medium" value={alignment} exclusive onChange={handleChange2}>
-                    {children}
-                </ToggleButtonGroup>
             </Grid>
         </Grid>
     )
