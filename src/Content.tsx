@@ -1,12 +1,86 @@
-import React from "react";
-import {Typography} from "@material-ui/core";
+import React, {MouseEventHandler} from "react";
+import {
+    Breadcrumbs,
+    Drawer,
+    Link,
+    Paper,
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow,
+    Typography
+} from "@material-ui/core";
 import useStyles from "./useStyles";
+import Toolbar from "./Toolbar";
 
-let Content: React.FC = () => {
-    let classes = useStyles();
+let Content: React.FC = (props: any) => {
+    const classes = useStyles();
+
+    const handleClick: MouseEventHandler<any> = (event) => {
+        event.defaultPrevented = false;
+    };
+
     return (
         <main className={classes.content}>
             <div className={classes.toolbar}/>
+
+            <Breadcrumbs aria-label="breadcrumb">
+                <Link color="inherit" href="/" onClick={handleClick}>
+                    Material-UI
+                </Link>
+                <Link color="inherit" href="/getting-started/installation/" onClick={handleClick}>
+                    Core
+                </Link>
+                <Typography color="textPrimary">Breadcrumb</Typography>
+            </Breadcrumbs>
+
+            <Toolbar></Toolbar>
+
+
+            <Paper>
+                <TableContainer>
+                    <Table>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>name</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            <TableRow>
+                                <TableCell>ts</TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>ts</TableCell>
+                            </TableRow>
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </Paper>
+
+            <Drawer/>
+
+            <Paper>
+                <TableContainer>
+                    <Table>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>name</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            <TableRow>
+                                <TableCell>ts</TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>ts</TableCell>
+                            </TableRow>
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </Paper>
+
             <Typography paragraph>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                 ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
@@ -30,6 +104,7 @@ let Content: React.FC = () => {
                 nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
                 accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
             </Typography>
+            {props.children}
         </main>
     )
 };
