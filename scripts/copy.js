@@ -35,9 +35,9 @@ files.forEach(file => {
 let lines = [];
 
 targets.forEach(target => {
-    lines.push(`import ${target} from './elements/${target}.png';`);
+    lines.push(`import _${target} from './elements/${target}.png';`);
 });
-lines.push(`let elements = { ${targets.join(',')} };`);
+lines.push(`let elements = { ${targets.map(target => `${target}:_${target}`).join(',')} };`);
 lines.push(`export default elements;`);
 let file = p.join(save, '../elements.ts');
 fs.writeFileSync(file, lines.join('\n'));
