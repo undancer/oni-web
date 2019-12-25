@@ -10,6 +10,11 @@ const useStyles = makeStyles((theme: Theme) =>
         grow: {
             flexGrow: 1,
         },
+        heading: {},
+        expansion: {
+            marginLeft: theme.spacing(1),
+            marginRight: theme.spacing(1),
+        },
         menuButton: {
             marginRight: theme.spacing(2),
         },
