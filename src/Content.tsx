@@ -1,19 +1,15 @@
 import React, {MouseEventHandler} from "react";
-import {Breadcrumbs, Drawer, Grid, Link, Paper, Typography,} from "@material-ui/core";
+import {Breadcrumbs, Drawer, Grid, Link, Typography,} from "@material-ui/core";
 import useStyles from "./useStyles";
 import Toolbar from "./Toolbar";
 import elements from "./image/elements";
-import {FormattedHTMLMessage} from "react-intl";
+import ElementEntry from "./ElementEntry";
 
 let Content: React.FC = (props: any) => {
     const classes = useStyles();
 
     const handleClick1: MouseEventHandler<any> = (event) => {
         event.defaultPrevented = false;
-    };
-
-    const handleClick2: MouseEventHandler<any> = (event) => {
-        console.log("clicked");
     };
 
     return (
@@ -45,14 +41,7 @@ let Content: React.FC = (props: any) => {
                         // @ts-ignore
                         let src = elements[name];
                         return (
-                            <Grid key={name} item onClick={handleClick2}>
-                                <Paper className={classes.paper}>
-                                    <img style={{maxWidth: 64}} src={src} alt={name}/>
-                                    <Typography variant="caption" display="block" gutterBottom>
-                                        <FormattedHTMLMessage id={`STRINGS.ELEMENTS.${name}.NAME`.toUpperCase()}/>
-                                    </Typography>
-                                </Paper>
-                            </Grid>
+                            <ElementEntry key={name} name={name} src={src}/>
                         )
                     })
                 }
