@@ -45,15 +45,22 @@ let Detail: React.FC = () => {
         name: data.highTempTransitionTarget,
         temp: data.highTemp
     } : null;
-    let transitionCurrent = {name: name, temp: 0};
+    let transitionCurrent = {name: name, temp: null};
 
-    const Transition: React.FC<any> = (props: { data: { name: string, temp: number } | null }) => {
+    const Transition: React.FC<any> = (props: { data: { name: string, temp?: number } | null }) => {
         if (props.data) {
             const {name, temp} = props.data;
             const src = image(name);
             // eslint-disable-next-line react-hooks/rules-of-hooks
             let intl = useIntl();
             let celsius = intl.formatMessage({id: 'STRINGS.UI.UNITSUFFIXES.TEMPERATURE.CELSIUS'});
+
+            let tempPart = temp ? (
+                <Typography>
+                    {kelvinToCelsius(temp).toFixed(2)}{celsius}
+                </Typography>
+            ) : null;
+
             return (
                 <Fragment>
                     <a href={'/details/' + name}>
@@ -62,9 +69,7 @@ let Detail: React.FC = () => {
                              alt={name}
                         />
                     </a>
-                    <Typography>
-                        {kelvinToCelsius(temp).toFixed(2)}{celsius}
-                    </Typography>
+                    {tempPart}
                 </Fragment>
             )
         }
