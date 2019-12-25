@@ -16,6 +16,7 @@ import useStyles from "./useStyles";
 import {FormattedHTMLMessage} from "react-intl";
 import elements from "./image/elements";
 import {ExpandMore as ExpandMoreIcon} from "@material-ui/icons";
+import Helmet from "react-helmet";
 
 let Detail: React.FC = () => {
     let classes = useStyles();
@@ -28,6 +29,11 @@ let Detail: React.FC = () => {
             }}
             anchor="right"
         >
+            <Helmet>
+                <meta charSet="utf-8"/>
+                <title>My Title</title>
+                <link rel="canonical" href="http://mysite.com/example"/>
+            </Helmet>
             <AppBar position="sticky">
                 <Toolbar>
                     <Typography variant="h6" className={classes.title}>
