@@ -12,7 +12,7 @@ interface ElementProps {
     src: any,
 }
 
-let ElementEntry: React.FC<ElementProps> = (props: ElementProps) => {
+let ElementEntity: React.FC<ElementProps> = (props: ElementProps) => {
 
     const classes = useStyles();
     const {name, src} = props;
@@ -40,4 +40,4 @@ let ElementEntry: React.FC<ElementProps> = (props: ElementProps) => {
         </Fragment>
     )
 };
-export default ElementEntry;
+export default ElementEntity;

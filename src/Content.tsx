@@ -1,16 +1,16 @@
-import React, {MouseEventHandler} from "react";
-import {Breadcrumbs, Drawer, Grid, Link, Typography,} from "@material-ui/core";
+import React from "react";
+import {Drawer, Grid,} from "@material-ui/core";
 import useStyles from "./useStyles";
-import Toolbar from "./Toolbar";
-import elements from "./image/elements";
-import ElementEntry from "./ElementEntry";
+import ElementEntity from "./ElementEntity";
+import entities from "./data/elements.json";
+import image from "./data/image";
 
 let Content: React.FC = (props: any) => {
     const classes = useStyles();
 
-    const handleClick1: MouseEventHandler<any> = (event) => {
-        event.defaultPrevented = false;
-    };
+    // const handleClick1: MouseEventHandler<any> = (event) => {
+    //     event.defaultPrevented = false;
+    // };
 
     return (
         <main className={classes.content}>
@@ -35,15 +35,12 @@ let Content: React.FC = (props: any) => {
                   justify="center"
                   alignItems="flex-start"
                   spacing={1}>
-                {
 
-                    Object.keys(elements).map(name => {
-                        // @ts-ignore
-                        let src = elements[name];
-                        return (
-                            <ElementEntry key={name} name={name} src={src}/>
-                        )
-                    })
+                {
+                    entities.map(
+                        entity =>
+                            <ElementEntity key={entity.Id} name={entity.Id} src={image(entity.Id)}/>
+                    )
                 }
 
             </Grid>

@@ -1,0 +1,1452 @@
+﻿[
+  {
+    "Id": "CrushedIce",
+    "Tags": [
+      "IceOre",
+      "Unstable",
+      "Solid",
+      "Liquifiable"
+    ],
+    "State": "Solid",
+    "highTemp": 272.5,
+    "highTempTransitionTarget": "Water"
+  },
+  {
+    "Id": "Diamond",
+    "Tags": [
+      "BuildableAny",
+      "Transparent",
+      "FlyingCritterEdible",
+      "Solid",
+      "Other"
+    ],
+    "State": "Solid",
+    "highTemp": 4200.0,
+    "highTempTransitionTarget": "MoltenCarbon"
+  },
+  {
+    "Id": "Isoresin",
+    "Tags": [
+      "BuildableRaw",
+      "Solid",
+      "RareMaterials"
+    ],
+    "State": "Solid",
+    "highTemp": 373.15,
+    "highTempTransitionTarget": "Naphtha"
+  },
+  {
+    "Id": "Algae",
+    "Tags": [
+      "Solid",
+      "Organics"
+    ],
+    "State": "Solid",
+    "highTemp": 398.15,
+    "highTempTransitionTarget": "Dirt"
+  },
+  {
+    "Id": "Niobium",
+    "Tags": [
+      "Metal",
+      "RefinedMetal",
+      "BuildableAny",
+      "Solid",
+      "RareMaterials"
+    ],
+    "State": "Solid",
+    "highTemp": 2750.0,
+    "highTempTransitionTarget": "MoltenNiobium"
+  },
+  {
+    "Id": "Cuprite",
+    "Tags": [
+      "Ore",
+      "BuildableAny",
+      "Solid",
+      "Metal"
+    ],
+    "State": "Solid",
+    "highTemp": 1357.0,
+    "highTempTransitionTarget": "MoltenCopper"
+  },
+  {
+    "Id": "Copper",
+    "Tags": [
+      "BuildableAny",
+      "Solid",
+      "RefinedMetal"
+    ],
+    "State": "Solid",
+    "highTemp": 1357.0,
+    "highTempTransitionTarget": "MoltenCopper"
+  },
+  {
+    "Id": "CrushedRock",
+    "Tags": [
+      "Unstable",
+      "Solid",
+      "BuildableProcessed"
+    ],
+    "State": "Solid",
+    "highTemp": 1683.0,
+    "highTempTransitionTarget": "Magma"
+  },
+  {
+    "Id": "SuperInsulator",
+    "Tags": [
+      "BuildableRaw",
+      "Plumbable",
+      "Crushable",
+      "BuildableAny",
+      "Solid",
+      "ManufacturedMaterial"
+    ],
+    "State": "Solid",
+    "highTemp": 3895.0,
+    "highTempTransitionTarget": "MoltenTungsten"
+  },
+  {
+    "Id": "BrineIce",
+    "Tags": [
+      "IceOre",
+      "BuildableAny",
+      "Solid",
+      "Liquifiable"
+    ],
+    "State": "Solid",
+    "highTemp": 256.65,
+    "highTempTransitionTarget": "Brine"
+  },
+  {
+    "Id": "SolidViscoGel",
+    "Tags": [
+      "Plastic",
+      "Solid",
+      "ManufacturedMaterial"
+    ],
+    "State": "Solid",
+    "highTemp": 242.5,
+    "highTempTransitionTarget": "ViscoGel"
+  },
+  {
+    "Id": "Ceramic",
+    "Tags": [
+      "Plumbable",
+      "Crushable",
+      "BuildableAny",
+      "Solid",
+      "BuildableRaw"
+    ],
+    "State": "Solid",
+    "highTemp": 2123.0,
+    "highTempTransitionTarget": "Magma"
+  },
+  {
+    "Id": "Fertilizer",
+    "Tags": [
+      "Solid",
+      "Agriculture"
+    ],
+    "State": "Solid",
+    "highTemp": 398.15,
+    "highTempTransitionTarget": "Dirt"
+  },
+  {
+    "Id": "SolidCrudeOil",
+    "Tags": [
+      "Solid",
+      "Liquifiable"
+    ],
+    "State": "Solid",
+    "highTemp": 233.0,
+    "highTempTransitionTarget": "CrudeOil"
+  },
+  {
+    "Id": "Wolframite",
+    "Tags": [
+      "Plumbable",
+      "BuildableAny",
+      "Solid",
+      "Metal"
+    ],
+    "State": "Solid",
+    "highTemp": 3200.0,
+    "highTempTransitionTarget": "MoltenTungsten"
+  },
+  {
+    "Id": "SlimeMold",
+    "Tags": [
+      "FlyingCritterEdible",
+      "Solid",
+      "Organics"
+    ],
+    "State": "Solid",
+    "highTemp": 398.15,
+    "highTempTransitionTarget": "Dirt"
+  },
+  {
+    "Id": "Polypropylene",
+    "Tags": [
+      "Antiseptic",
+      "Plastic",
+      "BuildableAny",
+      "Solid",
+      "ManufacturedMaterial"
+    ],
+    "State": "Solid",
+    "highTemp": 433.0,
+    "highTempTransitionTarget": "Naphtha"
+  },
+  {
+    "Id": "SolidNaphtha",
+    "Tags": [
+      "Solid",
+      "Liquifiable"
+    ],
+    "State": "Solid",
+    "highTemp": 223.0,
+    "highTempTransitionTarget": "Naphtha"
+  },
+  {
+    "Id": "Tungsten",
+    "Tags": [
+      "Plumbable",
+      "BuildableAny",
+      "Solid",
+      "RefinedMetal"
+    ],
+    "State": "Solid",
+    "highTemp": 3695.0,
+    "highTempTransitionTarget": "MoltenTungsten"
+  },
+  {
+    "Id": "RefinedCarbon",
+    "Tags": [
+      "Solid",
+      "ConsumableOre"
+    ],
+    "State": "Solid",
+    "highTemp": 4600.0,
+    "highTempTransitionTarget": "MoltenCarbon"
+  },
+  {
+    "Id": "Steel",
+    "Tags": [
+      "Metal",
+      "RefinedMetal",
+      "BuildableAny",
+      "Solid",
+      "ManufacturedMaterial"
+    ],
+    "State": "Solid",
+    "highTemp": 2700.0,
+    "highTempTransitionTarget": "MoltenSteel"
+  },
+  {
+    "Id": "Phosphorite",
+    "Tags": [
+      "FlyingCritterEdible",
+      "Solid",
+      "Agriculture"
+    ],
+    "State": "Solid",
+    "highTemp": 517.0,
+    "highTempTransitionTarget": "LiquidPhosphorus"
+  },
+  {
+    "Id": "SolidHydrogen",
+    "Tags": [
+      "Solid",
+      "Liquifiable"
+    ],
+    "State": "Solid",
+    "highTemp": 14.0,
+    "highTempTransitionTarget": "LiquidHydrogen"
+  },
+  {
+    "Id": "BleachStone",
+    "Tags": [
+      "FlyingCritterEdible",
+      "Solid",
+      "ConsumableOre"
+    ],
+    "State": "Solid",
+    "highTemp": 942.0,
+    "highTempTransitionTarget": "Chlorine"
+  },
+  {
+    "Id": "Lead",
+    "Tags": [
+      "BuildableAny",
+      "Solid",
+      "RefinedMetal"
+    ],
+    "State": "Solid",
+    "highTemp": 600.65,
+    "highTempTransitionTarget": "MoltenLead"
+  },
+  {
+    "Id": "Sulfur",
+    "Tags": [
+      "Solid",
+      "Other"
+    ],
+    "State": "Solid",
+    "highTemp": 388.35,
+    "highTempTransitionTarget": "LiquidSulfur"
+  },
+  {
+    "Id": "Lime",
+    "Tags": [
+      "Solid",
+      "ConsumableOre"
+    ],
+    "State": "Solid",
+    "highTemp": 1330.0,
+    "highTempTransitionTarget": "Magma"
+  },
+  {
+    "Id": "SolidChlorine",
+    "Tags": [
+      "Solid",
+      "Liquifiable"
+    ],
+    "State": "Solid",
+    "highTemp": 172.17,
+    "highTempTransitionTarget": "Chlorine"
+  },
+  {
+    "Id": "Obsidian",
+    "Tags": [
+      "Plumbable",
+      "Crushable",
+      "BuildableAny",
+      "PreciousRock",
+      "Solid",
+      "BuildableRaw"
+    ],
+    "State": "Solid",
+    "highTemp": 3000.0,
+    "highTempTransitionTarget": "Magma"
+  },
+  {
+    "Id": "SolidPetroleum",
+    "Tags": [
+      "Solid",
+      "Liquifiable"
+    ],
+    "State": "Solid",
+    "highTemp": 216.0,
+    "highTempTransitionTarget": "Petroleum"
+  },
+  {
+    "Id": "SolidSuperCoolant",
+    "Tags": [
+      "Solid",
+      "ManufacturedMaterial"
+    ],
+    "State": "Solid",
+    "highTemp": 2.0,
+    "highTempTransitionTarget": "SuperCoolant"
+  },
+  {
+    "Id": "IgneousRock",
+    "Tags": [
+      "Plumbable",
+      "Crushable",
+      "BuildableAny",
+      "Solid",
+      "BuildableRaw"
+    ],
+    "State": "Solid",
+    "highTemp": 1683.0,
+    "highTempTransitionTarget": "Magma"
+  },
+  {
+    "Id": "Gold",
+    "Tags": [
+      "BuildableAny",
+      "Solid",
+      "RefinedMetal"
+    ],
+    "State": "Solid",
+    "highTemp": 1337.0,
+    "highTempTransitionTarget": "MoltenGold"
+  },
+  {
+    "Id": "Rust",
+    "Tags": [
+      "Solid",
+      "ConsumableOre"
+    ],
+    "State": "Solid",
+    "highTemp": 1808.0,
+    "highTempTransitionTarget": "MoltenIron"
+  },
+  {
+    "Id": "Phosphorus",
+    "Tags": [
+      "FlyingCritterEdible",
+      "Solid",
+      "ConsumableOre"
+    ],
+    "State": "Solid",
+    "highTemp": 317.3,
+    "highTempTransitionTarget": "LiquidPhosphorus"
+  },
+  {
+    "Id": "Granite",
+    "Tags": [
+      "Plumbable",
+      "Crushable",
+      "BuildableAny",
+      "PreciousRock",
+      "Solid",
+      "BuildableRaw"
+    ],
+    "State": "Solid",
+    "highTemp": 942.0,
+    "highTempTransitionTarget": "Magma"
+  },
+  {
+    "Id": "Radium",
+    "Tags": [
+      "Solid"
+    ],
+    "State": "Solid",
+    "highTemp": 1233.0,
+    "highTempTransitionTarget": "Magma"
+  },
+  {
+    "Id": "Electrum",
+    "Tags": [
+      "Ore",
+      "BuildableAny",
+      "Solid",
+      "Metal"
+    ],
+    "State": "Solid",
+    "highTemp": 1337.0,
+    "highTempTransitionTarget": "MoltenGold"
+  },
+  {
+    "Id": "SolidCarbonDioxide",
+    "Tags": [
+      "Solid",
+      "Liquifiable"
+    ],
+    "State": "Solid",
+    "highTemp": 216.6,
+    "highTempTransitionTarget": "LiquidCarbonDioxide"
+  },
+  {
+    "Id": "SolidPropane",
+    "Tags": [
+      "BuildableAny",
+      "Solid",
+      "Liquifiable"
+    ],
+    "State": "Solid",
+    "highTemp": 85.0,
+    "highTempTransitionTarget": "LiquidPropane"
+  },
+  {
+    "Id": "AluminumOre",
+    "Tags": [
+      "Ore",
+      "BuildableAny",
+      "Solid",
+      "Metal"
+    ],
+    "State": "Solid",
+    "highTemp": 1357.0,
+    "highTempTransitionTarget": "MoltenAluminum"
+  },
+  {
+    "Id": "SedimentaryRock",
+    "Tags": [
+      "Plumbable",
+      "Crushable",
+      "BuildableAny",
+      "Solid",
+      "BuildableRaw"
+    ],
+    "State": "Solid",
+    "highTemp": 1200.0,
+    "highTempTransitionTarget": "Magma"
+  },
+  {
+    "Id": "Fullerene",
+    "Tags": [
+      "Solid",
+      "RareMaterials"
+    ],
+    "State": "Solid",
+    "highTemp": 4200.0,
+    "highTempTransitionTarget": "MoltenCarbon"
+  },
+  {
+    "Id": "GoldAmalgam",
+    "Tags": [
+      "Ore",
+      "BuildableAny",
+      "Solid",
+      "Metal"
+    ],
+    "State": "Solid",
+    "highTemp": 1337.0,
+    "highTempTransitionTarget": "MoltenGold"
+  },
+  {
+    "Id": "Salt",
+    "Tags": [
+      "Solid",
+      "ConsumableOre"
+    ],
+    "State": "Solid",
+    "highTemp": 1073.0,
+    "highTempTransitionTarget": "MoltenSalt"
+  },
+  {
+    "Id": "Sand",
+    "Tags": [
+      "Unstable",
+      "Solid",
+      "Filter"
+    ],
+    "State": "Solid",
+    "highTemp": 1986.0,
+    "highTempTransitionTarget": "MoltenGlass"
+  },
+  {
+    "Id": "Snow",
+    "Tags": [
+      "IceOre",
+      "Unstable",
+      "Solid",
+      "Liquifiable"
+    ],
+    "State": "Solid",
+    "highTemp": 272.5,
+    "highTempTransitionTarget": "Water"
+  },
+  {
+    "Id": "SandStone",
+    "Tags": [
+      "Plumbable",
+      "Crushable",
+      "BuildableAny",
+      "Solid",
+      "BuildableRaw"
+    ],
+    "State": "Solid",
+    "highTemp": 1200.0,
+    "highTempTransitionTarget": "Magma"
+  },
+  {
+    "Id": "Glass",
+    "Tags": [
+      "BuildableAny",
+      "Transparent",
+      "Solid",
+      "ManufacturedMaterial"
+    ],
+    "State": "Solid",
+    "highTemp": 1700.0,
+    "highTempTransitionTarget": "MoltenGlass"
+  },
+  {
+    "Id": "Clay",
+    "Tags": [
+      "BuildableAny",
+      "Solid",
+      "Farmable"
+    ],
+    "State": "Solid",
+    "highTemp": 1200.0,
+    "highTempTransitionTarget": "Ceramic"
+  },
+  {
+    "Id": "ToxicSand",
+    "Tags": [
+      "Unstable",
+      "Compostable",
+      "Solid",
+      "Organics"
+    ],
+    "State": "Solid",
+    "highTemp": 1986.0,
+    "highTempTransitionTarget": "MoltenGlass"
+  },
+  {
+    "Id": "Ice",
+    "Tags": [
+      "IceOre",
+      "BuildableAny",
+      "Solid",
+      "Liquifiable"
+    ],
+    "State": "Solid",
+    "highTemp": 272.5,
+    "highTempTransitionTarget": "Water"
+  },
+  {
+    "Id": "Carbon",
+    "Tags": [
+      "Coal",
+      "BuildableAny",
+      "Solid",
+      "ConsumableOre"
+    ],
+    "State": "Solid",
+    "highTemp": 550.0,
+    "highTempTransitionTarget": "RefinedCarbon"
+  },
+  {
+    "Id": "SolidOxygen",
+    "Tags": [
+      "Solid",
+      "Liquifiable"
+    ],
+    "State": "Solid",
+    "highTemp": 54.36,
+    "highTempTransitionTarget": "LiquidOxygen"
+  },
+  {
+    "Id": "Creature",
+    "Tags": [
+      "Solid"
+    ],
+    "State": "Solid",
+    "highTemp": 10000.0,
+    "highTempTransitionTarget": "Creature"
+  },
+  {
+    "Id": "Katairite",
+    "Tags": [
+      "Solid",
+      "Other"
+    ],
+    "State": "Solid",
+    "highTemp": 3695.0,
+    "highTempTransitionTarget": "MoltenTungsten"
+  },
+  {
+    "Id": "SolidMethane",
+    "Tags": [
+      "Solid",
+      "ConsumableOre"
+    ],
+    "State": "Solid",
+    "highTemp": 111.65,
+    "highTempTransitionTarget": "LiquidMethane"
+  },
+  {
+    "Id": "OxyRock",
+    "Tags": [
+      "FlyingCritterEdible",
+      "Solid",
+      "ConsumableOre"
+    ],
+    "State": "Solid",
+    "highTemp": 1683.0,
+    "highTempTransitionTarget": "Magma"
+  },
+  {
+    "Id": "MaficRock",
+    "Tags": [
+      "BuildableAny",
+      "Solid",
+      "BuildableRaw"
+    ],
+    "State": "Solid",
+    "highTemp": 1683.0,
+    "highTempTransitionTarget": "Magma"
+  },
+  {
+    "Id": "Iron",
+    "Tags": [
+      "BuildableAny",
+      "Solid",
+      "RefinedMetal"
+    ],
+    "State": "Solid",
+    "highTemp": 1808.0,
+    "highTempTransitionTarget": "MoltenIron"
+  },
+  {
+    "Id": "Regolith",
+    "Tags": [
+      "Unstable",
+      "Solid",
+      "Filter"
+    ],
+    "State": "Solid",
+    "highTemp": 1683.0,
+    "highTempTransitionTarget": "Magma"
+  },
+  {
+    "Id": "Bitumen",
+    "Tags": [
+      "Solid"
+    ],
+    "State": "Solid",
+    "highTemp": 812.0,
+    "highTempTransitionTarget": "CarbonDioxide"
+  },
+  {
+    "Id": "TempConductorSolid",
+    "Tags": [
+      "Metal",
+      "RefinedMetal",
+      "Plumbable",
+      "BuildableAny",
+      "Solid",
+      "ManufacturedMaterial"
+    ],
+    "State": "Solid",
+    "highTemp": 2950.0,
+    "highTempTransitionTarget": "MoltenNiobium"
+  },
+  {
+    "Id": "IronOre",
+    "Tags": [
+      "Ore",
+      "BuildableAny",
+      "Solid",
+      "Metal"
+    ],
+    "State": "Solid",
+    "highTemp": 1808.0,
+    "highTempTransitionTarget": "MoltenIron"
+  },
+  {
+    "Id": "Dirt",
+    "Tags": [
+      "BuildableAny",
+      "Solid",
+      "Farmable"
+    ],
+    "State": "Solid",
+    "highTemp": 600.0,
+    "highTempTransitionTarget": "Sand"
+  },
+  {
+    "Id": "DirtyIce",
+    "Tags": [
+      "IceOre",
+      "Mixture",
+      "BuildableAny",
+      "Solid",
+      "Liquifiable"
+    ],
+    "State": "Solid",
+    "highTemp": 252.5,
+    "highTempTransitionTarget": "DirtyWater"
+  },
+  {
+    "Id": "Fossil",
+    "Tags": [
+      "Solid",
+      "BuildableRaw"
+    ],
+    "State": "Solid",
+    "highTemp": 1612.0,
+    "highTempTransitionTarget": "Magma"
+  },
+  {
+    "Id": "Unobtanium",
+    "Tags": [
+      "Solid",
+      "Special"
+    ],
+    "State": "Solid",
+    "highTemp": 10000.0,
+    "highTempTransitionTarget": "Unobtanium"
+  },
+  {
+    "Id": "SolidEthanol",
+    "Tags": [
+      "Solid"
+    ],
+    "State": "Solid",
+    "highTemp": 159.1,
+    "highTempTransitionTarget": "Ethanol"
+  },
+  {
+    "Id": "FoolsGold",
+    "Tags": [
+      "Ore",
+      "BuildableAny",
+      "Solid",
+      "Metal"
+    ],
+    "State": "Solid",
+    "highTemp": 1357.0,
+    "highTempTransitionTarget": "MoltenIron"
+  },
+  {
+    "Id": "Aluminum",
+    "Tags": [
+      "BuildableAny",
+      "Solid",
+      "RefinedMetal"
+    ],
+    "State": "Solid",
+    "highTemp": 933.45,
+    "highTempTransitionTarget": "MoltenAluminum"
+  },
+  {
+    "Id": "LiquidOxygen",
+    "Tags": [
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 90.19,
+    "highTempTransitionTarget": "Oxygen",
+    "lowTemp": 54.36,
+    "lowTempTransitionTarget": "SolidOxygen"
+  },
+  {
+    "Id": "ViscoGel",
+    "Tags": [
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 753.0,
+    "highTempTransitionTarget": "Naphtha",
+    "lowTemp": 242.5,
+    "lowTempTransitionTarget": "SolidViscoGel"
+  },
+  {
+    "Id": "MoltenAluminum",
+    "Tags": [
+      "Metal",
+      "RefinedMetal",
+      "EmitsLight",
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 2743.15,
+    "highTempTransitionTarget": "AluminumGas",
+    "lowTemp": 933.45,
+    "lowTempTransitionTarget": "Aluminum"
+  },
+  {
+    "Id": "MoltenLead",
+    "Tags": [
+      "Metal",
+      "RefinedMetal",
+      "EmitsLight",
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 2022.15,
+    "highTempTransitionTarget": "LeadGas",
+    "lowTemp": 600.65,
+    "lowTempTransitionTarget": "Lead"
+  },
+  {
+    "Id": "LiquidCarbonDioxide",
+    "Tags": [
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 225.0,
+    "highTempTransitionTarget": "CarbonDioxide",
+    "lowTemp": 216.6,
+    "lowTempTransitionTarget": "SolidCarbonDioxide"
+  },
+  {
+    "Id": "CrudeOil",
+    "Tags": [
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 673.0,
+    "highTempTransitionTarget": "Petroleum",
+    "lowTemp": 233.0,
+    "lowTempTransitionTarget": "SolidCrudeOil"
+  },
+  {
+    "Id": "MoltenGlass",
+    "Tags": [
+      "EmitsLight",
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 2630.0,
+    "highTempTransitionTarget": "RockGas",
+    "lowTemp": 1400.0,
+    "lowTempTransitionTarget": "Glass"
+  },
+  {
+    "Id": "LiquidSulfur",
+    "Tags": [
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 610.15,
+    "highTempTransitionTarget": "SulfurGas",
+    "lowTemp": 388.35,
+    "lowTempTransitionTarget": "Sulfur"
+  },
+  {
+    "Id": "MoltenGold",
+    "Tags": [
+      "Metal",
+      "RefinedMetal",
+      "EmitsLight",
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 3129.0,
+    "highTempTransitionTarget": "GoldGas",
+    "lowTemp": 1337.0,
+    "lowTempTransitionTarget": "Gold"
+  },
+  {
+    "Id": "Magma",
+    "Tags": [
+      "EmitsLight",
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 2630.0,
+    "highTempTransitionTarget": "RockGas",
+    "lowTemp": 1683.0,
+    "lowTempTransitionTarget": "IgneousRock"
+  },
+  {
+    "Id": "Chlorine",
+    "Tags": [
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 238.55,
+    "highTempTransitionTarget": "ChlorineGas",
+    "lowTemp": 172.17,
+    "lowTempTransitionTarget": "SolidChlorine"
+  },
+  {
+    "Id": "LiquidHydrogen",
+    "Tags": [
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 21.0,
+    "highTempTransitionTarget": "Hydrogen",
+    "lowTemp": 14.0,
+    "lowTempTransitionTarget": "SolidHydrogen"
+  },
+  {
+    "Id": "LiquidPropane",
+    "Tags": [
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 231.0,
+    "highTempTransitionTarget": "Propane",
+    "lowTemp": 85.0,
+    "lowTempTransitionTarget": "SolidPropane"
+  },
+  {
+    "Id": "MoltenTungsten",
+    "Tags": [
+      "Metal",
+      "RefinedMetal",
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 6203.0,
+    "highTempTransitionTarget": "TungstenGas",
+    "lowTemp": 3695.0,
+    "lowTempTransitionTarget": "Tungsten"
+  },
+  {
+    "Id": "Petroleum",
+    "Tags": [
+      "CombustibleLiquid",
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 812.0,
+    "highTempTransitionTarget": "SourGas",
+    "lowTemp": 216.0,
+    "lowTempTransitionTarget": "SolidPetroleum"
+  },
+  {
+    "Id": "MoltenSalt",
+    "Tags": [
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 1738.0,
+    "highTempTransitionTarget": "SaltGas",
+    "lowTemp": 1073.0,
+    "lowTempTransitionTarget": "Salt"
+  },
+  {
+    "Id": "Brine",
+    "Tags": [
+      "AnyWater",
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 375.9,
+    "highTempTransitionTarget": "Steam",
+    "lowTemp": 250.65,
+    "lowTempTransitionTarget": "BrineIce"
+  },
+  {
+    "Id": "SuperCoolant",
+    "Tags": [
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 710.0,
+    "highTempTransitionTarget": "SuperCoolantGas",
+    "lowTemp": 2.0,
+    "lowTempTransitionTarget": "SolidSuperCoolant"
+  },
+  {
+    "Id": "Ethanol",
+    "Tags": [
+      "CombustibleLiquid",
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 351.5,
+    "highTempTransitionTarget": "EthanolGas",
+    "lowTemp": 159.1,
+    "lowTempTransitionTarget": "SolidEthanol"
+  },
+  {
+    "Id": "LiquidMethane",
+    "Tags": [
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 111.65,
+    "highTempTransitionTarget": "Methane",
+    "lowTemp": 90.55,
+    "lowTempTransitionTarget": "SolidMethane"
+  },
+  {
+    "Id": "MoltenIron",
+    "Tags": [
+      "Metal",
+      "RefinedMetal",
+      "EmitsLight",
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 3023.0,
+    "highTempTransitionTarget": "IronGas",
+    "lowTemp": 1808.0,
+    "lowTempTransitionTarget": "Iron"
+  },
+  {
+    "Id": "MoltenCarbon",
+    "Tags": [
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 5100.0,
+    "highTempTransitionTarget": "CarbonGas",
+    "lowTemp": 3825.0,
+    "lowTempTransitionTarget": "RefinedCarbon"
+  },
+  {
+    "Id": "Naphtha",
+    "Tags": [
+      "Oil",
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 812.0,
+    "highTempTransitionTarget": "SourGas",
+    "lowTemp": 223.0,
+    "lowTempTransitionTarget": "SolidNaphtha"
+  },
+  {
+    "Id": "LiquidPhosphorus",
+    "Tags": [
+      "EmitsLight",
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 553.6,
+    "highTempTransitionTarget": "PhosphorusGas",
+    "lowTemp": 317.3,
+    "lowTempTransitionTarget": "Phosphorus"
+  },
+  {
+    "Id": "MoltenSteel",
+    "Tags": [
+      "Metal",
+      "RefinedMetal",
+      "EmitsLight",
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 4100.0,
+    "highTempTransitionTarget": "SteelGas",
+    "lowTemp": 1357.0,
+    "lowTempTransitionTarget": "Steel"
+  },
+  {
+    "Id": "MoltenNiobium",
+    "Tags": [
+      "Metal",
+      "RefinedMetal",
+      "EmitsLight",
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 5017.0,
+    "highTempTransitionTarget": "NiobiumGas",
+    "lowTemp": 2750.0,
+    "lowTempTransitionTarget": "Niobium"
+  },
+  {
+    "Id": "DirtyWater",
+    "Tags": [
+      "Mixture",
+      "AnyWater",
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 392.5,
+    "highTempTransitionTarget": "Steam",
+    "lowTemp": 252.5,
+    "lowTempTransitionTarget": "DirtyIce"
+  },
+  {
+    "Id": "Water",
+    "Tags": [
+      "AnyWater",
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 372.5,
+    "highTempTransitionTarget": "Steam",
+    "lowTemp": 272.5,
+    "lowTempTransitionTarget": "Ice"
+  },
+  {
+    "Id": "SaltWater",
+    "Tags": [
+      "AnyWater",
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 372.84,
+    "highTempTransitionTarget": "Steam",
+    "lowTemp": 265.65,
+    "lowTempTransitionTarget": "Brine"
+  },
+  {
+    "Id": "MoltenCopper",
+    "Tags": [
+      "Metal",
+      "RefinedMetal",
+      "EmitsLight",
+      "Liquid"
+    ],
+    "State": "Liquid",
+    "highTemp": 2834.0,
+    "highTempTransitionTarget": "CopperGas",
+    "lowTemp": 1357.0,
+    "lowTempTransitionTarget": "Copper"
+  },
+  {
+    "Id": "SulfurGas",
+    "Tags": [
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 610.15,
+    "lowTempTransitionTarget": "LiquidSulfur"
+  },
+  {
+    "Id": "SaltGas",
+    "Tags": [
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 1738.0,
+    "lowTempTransitionTarget": "MoltenSalt"
+  },
+  {
+    "Id": "Propane",
+    "Tags": [
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 231.0,
+    "lowTempTransitionTarget": "LiquidPropane"
+  },
+  {
+    "Id": "NiobiumGas",
+    "Tags": [
+      "Metal",
+      "RefinedMetal",
+      "EmitsLight",
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 5017.0,
+    "lowTempTransitionTarget": "MoltenNiobium"
+  },
+  {
+    "Id": "Oxygen",
+    "Tags": [
+      "Gas",
+      "Breathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 90.19,
+    "lowTempTransitionTarget": "LiquidOxygen"
+  },
+  {
+    "Id": "SteelGas",
+    "Tags": [
+      "Metal",
+      "Alloy",
+      "RefinedMetal",
+      "EmitsLight",
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 4100.0,
+    "lowTempTransitionTarget": "MoltenSteel"
+  },
+  {
+    "Id": "ChlorineGas",
+    "Tags": [
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 238.55,
+    "lowTempTransitionTarget": "Chlorine"
+  },
+  {
+    "Id": "Hydrogen",
+    "Tags": [
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 21.0,
+    "lowTempTransitionTarget": "LiquidHydrogen"
+  },
+  {
+    "Id": "SourGas",
+    "Tags": [
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 111.65,
+    "lowTempTransitionTarget": "LiquidMethane"
+  },
+  {
+    "Id": "Steam",
+    "Tags": [
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 372.5,
+    "lowTempTransitionTarget": "Water"
+  },
+  {
+    "Id": "Methane",
+    "Tags": [
+      "CombustibleGas",
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 111.65,
+    "lowTempTransitionTarget": "LiquidMethane"
+  },
+  {
+    "Id": "GoldGas",
+    "Tags": [
+      "Metal",
+      "RefinedMetal",
+      "EmitsLight",
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 3129.0,
+    "lowTempTransitionTarget": "MoltenGold"
+  },
+  {
+    "Id": "EthanolGas",
+    "Tags": [
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 351.5,
+    "lowTempTransitionTarget": "Ethanol"
+  },
+  {
+    "Id": "RockGas",
+    "Tags": [
+      "EmitsLight",
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 2630.0,
+    "lowTempTransitionTarget": "Magma"
+  },
+  {
+    "Id": "CarbonGas",
+    "Tags": [
+      "EmitsLight",
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 5100.0,
+    "lowTempTransitionTarget": "MoltenCarbon"
+  },
+  {
+    "Id": "SuperCoolantGas",
+    "Tags": [
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 710.0,
+    "lowTempTransitionTarget": "SuperCoolant"
+  },
+  {
+    "Id": "AluminumGas",
+    "Tags": [
+      "Metal",
+      "RefinedMetal",
+      "EmitsLight",
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 2743.15,
+    "lowTempTransitionTarget": "MoltenAluminum"
+  },
+  {
+    "Id": "TungstenGas",
+    "Tags": [
+      "Metal",
+      "RefinedMetal",
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 6203.0,
+    "lowTempTransitionTarget": "MoltenTungsten"
+  },
+  {
+    "Id": "ContaminatedOxygen",
+    "Tags": [
+      "Gas",
+      "Breathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 90.19,
+    "lowTempTransitionTarget": "LiquidOxygen"
+  },
+  {
+    "Id": "LeadGas",
+    "Tags": [
+      "Metal",
+      "RefinedMetal",
+      "EmitsLight",
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 2022.15,
+    "lowTempTransitionTarget": "MoltenLead"
+  },
+  {
+    "Id": "IronGas",
+    "Tags": [
+      "Metal",
+      "RefinedMetal",
+      "EmitsLight",
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 3023.0,
+    "lowTempTransitionTarget": "MoltenIron"
+  },
+  {
+    "Id": "PhosphorusGas",
+    "Tags": [
+      "EmitsLight",
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 553.6,
+    "lowTempTransitionTarget": "LiquidPhosphorus"
+  },
+  {
+    "Id": "CarbonDioxide",
+    "Tags": [
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 225.0,
+    "lowTempTransitionTarget": "LiquidCarbonDioxide"
+  },
+  {
+    "Id": "CopperGas",
+    "Tags": [
+      "Metal",
+      "RefinedMetal",
+      "EmitsLight",
+      "Gas",
+      "Unbreathable"
+    ],
+    "State": "Gas",
+    "lowTemp": 2834.0,
+    "lowTempTransitionTarget": "MoltenCopper"
+  },
+  {
+    "Id": "Void",
+    "Tags": [
+      "Vacuum",
+      "Special"
+    ],
+    "State": "Vacuum",
+    "highTemp": 0.0,
+    "highTempTransitionTarget": "Void"
+  },
+  {
+    "Id": "Vacuum",
+    "Tags": [
+      "Vacuum",
+      "Special"
+    ],
+    "State": "Vacuum",
+    "highTemp": 0.0,
+    "highTempTransitionTarget": "Vacuum"
+  }
+]

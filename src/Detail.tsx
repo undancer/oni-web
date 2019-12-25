@@ -13,27 +13,28 @@ import {
     Typography
 } from "@material-ui/core";
 import useStyles from "./useStyles";
-import {FormattedHTMLMessage} from "react-intl";
-import elements from "./image/elements";
+import {FormattedHTMLMessage, useIntl} from "react-intl";
 import {ExpandMore as ExpandMoreIcon} from "@material-ui/icons";
 import r from "./reducers"
 import Helmet from "react-helmet";
 import {useParams} from "react-router";
+import image from "./data/image";
+import entities from "./data/elements.json";
 
 let Detail: React.FC = () => {
     let classes = useStyles();
 
     let {name} = useParams();
+    let intl = useIntl();
 
     name = name || "";
 
-    // @ts-ignore
-    let src = elements[name];
+    let data: any = entities.find((entity) => entity.Id === name);
+    let src = image(data.Id);
+    let tags: [any] = data.Tags;
+    console.log(data);
 
-    // @ts-ignore
     const [state, dispatch] = React.useReducer(r.reducer, r.initialState);
-
-    console.log(state.count);
 
     return (
         <Drawer
@@ -46,7 +47,7 @@ let Detail: React.FC = () => {
         >
             <Helmet>
                 <meta charSet="utf-8"/>
-                <title>{name.toUpperCase()}</title>
+                <title>{name}</title>
                 <link rel="canonical" href="http://mysite.com/example"/>
             </Helmet>
             <AppBar position="sticky">
@@ -67,13 +68,19 @@ let Detail: React.FC = () => {
                 </ListItem>
                 <ListItem>
                     <Typography variant="caption" display="block">
-                        <FormattedHTMLMessage id={(`STRINGS.ELEMENTS.` + name + `.DESC`).toUpperCase()}/>
+                        <FormattedHTMLMessage id={(`STRINGS.ELEMENTS.` + name + `.DESC`).toUpperCase()}
+                                              defaultMessage={"信息缺失"}/>
                     </Typography>
                 </ListItem>
                 <ListItem className={classes.chip} style={{justifyContent: "center"}}>
-                    <Chip variant="outlined" size="small" label="Basic"/>
-                    <Chip variant="outlined" size="small" label="Basic"/>
-                    <Chip variant="outlined" size="small" label="Basic"/>
+                    {
+                        tags.map((tag) => {
+                                let label: string = ('STRINGS.MISC.TAGS.' + tag).toUpperCase();
+                                return (<Chip key={tag} variant="outlined" size="small"
+                                              label={intl.formatMessage({id: label})}/>)
+                            }
+                        )
+                    }
                 </ListItem>
             </List>
             {
