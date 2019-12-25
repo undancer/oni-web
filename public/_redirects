@@ -1,1 +1,10 @@
+# These rules will change if you change your site’s custom domains or HTTPS settings
+
+# Redirect domain aliases to primary domain
+https://onidb.undancer.com/* https://oni.wiki/:splat 301!
+
+# Optional: Redirect default Netlify subdomain to primary domain
+https://stoic-keller-656488.netlify.com/* https://oni.wiki/:splat 301!
+
+# React Router Support
 /*    /index.html   200
