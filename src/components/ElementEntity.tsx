@@ -5,6 +5,7 @@ import e from "../reducers";
 import {clickEntry} from "../actions";
 import {useHistory} from "react-router-dom";
 import useStyles from "../useStyles";
+import EntityImage from "./EntityImage";
 
 
 interface ElementProps {
@@ -31,7 +32,7 @@ let ElementEntity: React.FC<ElementProps> = (props: ElementProps) => {
         <Fragment>
             <Grid item>
                 <Paper className={classes.paper} onClick={handleClick}>
-                    <img style={{maxWidth: 64}} src={src} alt={name}/>
+                    <EntityImage src={src} alt={name} className={classes.entityImage}/>
                     <Typography variant="caption" display="block" gutterBottom>
                         <FormattedHTMLMessage id={`STRINGS.ELEMENTS.${name}.NAME`.toUpperCase()}/>
                     </Typography>

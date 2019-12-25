@@ -6,17 +6,25 @@ import {IntlProvider} from "react-intl";
 import * as serviceWorker from './serviceWorker';
 import languages from "./config/strings";
 import {BrowserRouter as Router,} from "react-router-dom";
+import {jssPreset, StylesProvider} from '@material-ui/core';
+import {create} from 'jss';
 
 let Root = () => {
     let messages: any = languages();
     let locale = navigator.language;
 
+    const jss = create({
+        plugins: [...jssPreset().plugins],
+    });
+
     // @ts-ignore
     return (
         <IntlProvider locale={locale} messages={messages[locale]}>
-            <Router>
-                <App/>
-            </Router>
+            <StylesProvider injectFirst jss={jss}>
+                <Router>
+                    <App/>
+                </Router>
+            </StylesProvider>
         </IntlProvider>
     )
 };

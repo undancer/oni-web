@@ -110,8 +110,8 @@ const useStyles = makeStyles((theme: Theme) =>
             margin: 4,
         },
         paper: {
-            width: 64 + 8 + 8,
-            height: 120,
+            width: theme.spacing(8 + 1 * 2),
+            height: theme.spacing(15),
             padding: theme.spacing(1),
             textAlign: 'center',
             color: theme.palette.text.secondary,
@@ -124,6 +124,10 @@ const useStyles = makeStyles((theme: Theme) =>
             flexWrap: "wrap",
             justifyContent: "center",
         },
+        entityImage: {
+            maxWidth: theme.spacing(8),
+            maxHeight: theme.spacing(8),
+        }
     }),
 );
 export default useStyles;
