@@ -23,7 +23,7 @@ let ElementEntity: React.FC<ElementProps> = (props: ElementProps) => {
     const [state, dispatch] = React.useReducer(e.elementReducer, initialState);
 
     const handleClick = (event: MouseEvent) => {
-        history.push("/d/" + name);
+        history.push("/details/" + name);
         clickEntry(name)(dispatch);
     };
 

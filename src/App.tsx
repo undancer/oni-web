@@ -6,6 +6,7 @@ import {CssBaseline} from "@material-ui/core";
 import Footer from "./Footer";
 import useStyles from "./useStyles";
 import {Route, Switch} from "react-router";
+import Readme from "./Readme";
 
 const App: React.FC = () => {
     let classes = useStyles();
@@ -18,7 +19,10 @@ const App: React.FC = () => {
                 <Footer/>
             </Content>
             <Switch>
-                <Route path={"/d/:name"}>
+                <Route exact path="/">
+                    <Readme/>
+                </Route>
+                <Route path="/details/:name">
                     <Detail/>
                 </Route>
             </Switch>
