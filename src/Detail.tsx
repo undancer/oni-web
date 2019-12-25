@@ -72,7 +72,7 @@ let Detail: React.FC = () => {
                                               defaultMessage={"信息缺失"}/>
                     </Typography>
                 </ListItem>
-                <ListItem className={classes.chip} style={{justifyContent: "center"}}>
+                <ListItem className={classes.chip}>
                     {
                         tags.map((tag) => {
                                 let label: string = ('STRINGS.MISC.TAGS.' + tag).toUpperCase();

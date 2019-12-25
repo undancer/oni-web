@@ -121,6 +121,8 @@ const useStyles = makeStyles((theme: Theme) =>
             '& > *': {
                 margin: theme.spacing(1 / 2),
             },
+            flexWrap: "wrap",
+            justifyContent: "center",
         },
     }),
 );
