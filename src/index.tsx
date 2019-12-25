@@ -5,6 +5,7 @@ import App from './App';
 import {IntlProvider} from "react-intl";
 import * as serviceWorker from './serviceWorker';
 import languages from "./config/strings";
+import {BrowserRouter as Router,} from "react-router-dom";
 
 let Root = () => {
     let messages: any = languages();
@@ -13,7 +14,9 @@ let Root = () => {
     // @ts-ignore
     return (
         <IntlProvider locale={locale} messages={messages[locale]}>
-            <App/>
+            <Router>
+                <App/>
+            </Router>
         </IntlProvider>
     )
 };
