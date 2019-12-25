@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12119f94-bd2c-4298-b2c5-f180268f4466" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Search.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Content.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/elements.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/elements.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,11 +99,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.copy" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.po2json" />
         <item itemvalue="npm.hello" />
-        <item itemvalue="npm.copy" />
       </list>
     </recent_temporary>
   </component>
@@ -133,7 +130,7 @@
       <option name="presentableId" value="Default" />
       <updated>1577159431813</updated>
       <workItem from="1577159433219" duration="2954000" />
-      <workItem from="1577170634969" duration="44715000" />
+      <workItem from="1577170634969" duration="44968000" />
     </task>
     <servers />
   </component>
@@ -152,22 +149,22 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="458" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.877@0.23.1440.877" timestamp="1577197271591" />
-    <state width="1379" height="259" key="GridCell.Tab.0.bottom" timestamp="1577267476681">
+    <state width="1379" height="259" key="GridCell.Tab.0.bottom" timestamp="1577268271065">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1379" height="259" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1577267476681" />
-    <state width="1379" height="259" key="GridCell.Tab.0.center" timestamp="1577267476680">
+    <state width="1379" height="259" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1577268271065" />
+    <state width="1379" height="259" key="GridCell.Tab.0.center" timestamp="1577268271063">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1379" height="259" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1577267476680" />
-    <state width="1379" height="259" key="GridCell.Tab.0.left" timestamp="1577267476680">
+    <state width="1379" height="259" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1577268271063" />
+    <state width="1379" height="259" key="GridCell.Tab.0.left" timestamp="1577268271063">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1379" height="259" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1577267476680" />
-    <state width="1379" height="259" key="GridCell.Tab.0.right" timestamp="1577267476681">
+    <state width="1379" height="259" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1577268271063" />
+    <state width="1379" height="259" key="GridCell.Tab.0.right" timestamp="1577268271065">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1379" height="259" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1577267476681" />
+    <state width="1379" height="259" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1577268271065" />
     <state x="385" y="223" width="670" height="676" key="search.everywhere.popup" timestamp="1577264042080">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

@@ -51,6 +51,7 @@ import _petroleum from './elements/petroleum.png';
 import _saltwater from './elements/saltwater.png';
 import _supercoolant from './elements/supercoolant.png';
 import _viscogel from './elements/viscogel.png';
+import _water from './elements/water.png';
 import _algae from './elements/algae.png';
 import _aluminum from './elements/aluminum.png';
 import _aluminumore from './elements/aluminumore.png';
@@ -179,6 +180,7 @@ let elements = {
     saltwater: _saltwater,
     supercoolant: _supercoolant,
     viscogel: _viscogel,
+    water: _water,
     algae: _algae,
     aluminum: _aluminum,
     aluminumore: _aluminumore,
