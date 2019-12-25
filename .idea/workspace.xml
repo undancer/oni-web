@@ -3,7 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="12119f94-bd2c-4298-b2c5-f180268f4466" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Detail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Detail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Content.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Detail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Detail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElementEntity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ElementEntity.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Readme.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Readme.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Toolbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Toolbar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +51,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/data" />
       <recent name="$PROJECT_DIR$/src/image/elements" />
     </key>
@@ -131,7 +140,7 @@
       <option name="presentableId" value="Default" />
       <updated>1577159431813</updated>
       <workItem from="1577159433219" duration="2954000" />
-      <workItem from="1577170634969" duration="57212000" />
+      <workItem from="1577170634969" duration="57671000" />
     </task>
     <servers />
   </component>

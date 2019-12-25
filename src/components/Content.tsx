@@ -1,9 +1,9 @@
 import React from "react";
 import {Drawer, Grid,} from "@material-ui/core";
-import useStyles from "./useStyles";
+import useStyles from "../useStyles";
 import ElementEntity from "./ElementEntity";
-import entities from "./data/elements.json";
-import image from "./data/image";
+import entities from "../data/elements.json";
+import image from "../data/image";
 
 let Content: React.FC = (props: any) => {
     const classes = useStyles();

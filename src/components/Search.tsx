@@ -1,7 +1,7 @@
 import React from "react";
 import {Search as SearchIcon} from "@material-ui/icons";
 import {InputBase} from "@material-ui/core";
-import useStyles from "./useStyles";
+import useStyles from "../useStyles";
 
 let Search: React.FC = () => {
     const classes = useStyles();

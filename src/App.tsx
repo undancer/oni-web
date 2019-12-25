@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from "./Header";
-import Detail from "./Detail";
-import Content from "./Content";
+import Header from "./components/Header";
+import EntityDetail from "./components/EntityDetail";
+import Content from "./components/Content";
 import {CssBaseline} from "@material-ui/core";
-import Footer from "./Footer";
+import Footer from "./components/Footer";
 import useStyles from "./useStyles";
 import {Route, Switch} from "react-router";
-import Readme from "./Readme";
+import Readme from "./components/Readme";
 
 const App: React.FC = () => {
     let classes = useStyles();
@@ -23,7 +23,7 @@ const App: React.FC = () => {
                     <Readme/>
                 </Route>
                 <Route path="/details/:name">
-                    <Detail/>
+                    <EntityDetail/>
                 </Route>
             </Switch>
         </div>

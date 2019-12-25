@@ -1,6 +1,6 @@
 import {AppBar, Toolbar, Typography} from "@material-ui/core";
 import React from "react";
-import useStyles from "./useStyles";
+import useStyles from "../useStyles";
 //import Search from "./Search";
 
 let Header: React.FC = () => {

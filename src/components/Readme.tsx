@@ -1,6 +1,6 @@
 import React from "react";
 import {AppBar, Drawer, Toolbar, Typography} from "@material-ui/core";
-import useStyles from "./useStyles";
+import useStyles from "../useStyles";
 
 let Readme: React.FC = () => {
 

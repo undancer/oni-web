@@ -11,21 +11,21 @@ import {
     Toolbar,
     Typography
 } from "@material-ui/core";
-import useStyles from "./useStyles";
+import useStyles from "../useStyles";
 import {FormattedHTMLMessage, useIntl} from "react-intl";
 import {
     ArrowLeft as ArrowLeftIcon,
     ArrowRight as ArrowRightIcon,
     ExpandMore as ExpandMoreIcon
 } from "@material-ui/icons";
-import r from "./reducers"
+import r from "../reducers"
 import Helmet from "react-helmet";
 import {useParams} from "react-router";
-import image from "./data/image";
-import entities from "./data/elements.json";
-import {kelvinToCelsius} from "./utils/temperature";
+import image from "../data/image";
+import entities from "../data/elements.json";
+import {kelvinToCelsius} from "../utils/temperature";
 
-let Detail: React.FC = () => {
+let EntityDetail: React.FC = () => {
     let classes = useStyles();
 
     let {name} = useParams();
@@ -172,4 +172,4 @@ let Detail: React.FC = () => {
         </Drawer>
     )
 };
-export default Detail;
+export default EntityDetail;

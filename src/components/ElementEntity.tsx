@@ -1,10 +1,10 @@
 import React, {Fragment, MouseEvent} from "react";
 import {Grid, Paper, Typography} from "@material-ui/core";
 import {FormattedHTMLMessage} from "react-intl";
-import e from "./reducers";
-import {clickEntry} from "./actions";
+import e from "../reducers";
+import {clickEntry} from "../actions";
 import {useHistory} from "react-router-dom";
-import useStyles from "./useStyles";
+import useStyles from "../useStyles";
 
 
 interface ElementProps {

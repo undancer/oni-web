@@ -10,7 +10,7 @@ import {
     Paper,
     Select,
 } from "@material-ui/core";
-import useStyles from "./useStyles";
+import useStyles from "../useStyles";
 import {
     Directions as DirectionsIcon,
     FormatAlignCenter as FormatAlignCenterIcon,
