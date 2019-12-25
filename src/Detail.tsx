@@ -16,10 +16,17 @@ import useStyles from "./useStyles";
 import {FormattedHTMLMessage} from "react-intl";
 import elements from "./image/elements";
 import {ExpandMore as ExpandMoreIcon} from "@material-ui/icons";
+import r from "./reducers"
 import Helmet from "react-helmet";
 
 let Detail: React.FC = () => {
     let classes = useStyles();
+
+    // @ts-ignore
+    const [state, dispatch] = React.useReducer(r.reducer, r.initialState);
+
+    console.log(state.count);
+
     return (
         <Drawer
             className={classes.drawer}
@@ -46,7 +53,9 @@ let Detail: React.FC = () => {
             <List>
                 <ListItem alignItems={"center"}>
                     <img style={{maxWidth: 256, margin: "auto", display: "block"}} src={elements.cuprite}
-                         alt={'algae'}/>
+                         alt={'algae'} onClick={() => {
+                        dispatch({type: 'increment'})
+                    }}/>
                 </ListItem>
                 <ListItem>
                     <Typography variant="caption" display="block">
