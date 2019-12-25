@@ -31,7 +31,7 @@ let Detail: React.FC = () => {
     let data: any = entities.find((entity) => entity.Id === name);
     let src = image(data.Id);
     let tags: [any] = data.Tags;
-    console.log(data);
+    // console.log(data);
 
     const [state, dispatch] = React.useReducer(r.reducer, r.initialState);
 

@@ -1,4 +1,4 @@
-import {ElementAction, TYPE_CLICK_ENTRY} from "../actions";
+import {ElementAction, TYPE_CLICK_ENTITY} from "../actions";
 
 const initialState = {count: 0};
 
@@ -16,8 +16,8 @@ const reducer = (state: { count: number }, action: any) => {
 
 const elementReducer = (state: any, action: ElementAction) => {
     switch (action.type) {
-        case TYPE_CLICK_ENTRY:
-            console.log(TYPE_CLICK_ENTRY);
+        case TYPE_CLICK_ENTITY:
+            console.log(TYPE_CLICK_ENTITY);
             console.log(action);
             break;
         default:

@@ -1,7 +1,7 @@
 import {Dispatch} from "react";
 
 
-export const TYPE_CLICK_ENTRY = 'CLICK_ENTRY';
+export const TYPE_CLICK_ENTITY = 'CLICK_ENTITY';
 
 export interface ElementAction {
     type: string,
@@ -10,6 +10,6 @@ export interface ElementAction {
 
 export let clickEntry = (name: string) => {
     return (dispatch: Dispatch<ElementAction>) => {
-        dispatch({type: TYPE_CLICK_ENTRY, name: name});
+        dispatch({type: TYPE_CLICK_ENTITY, name: name});
     }
 };
