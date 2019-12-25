@@ -1,5 +1,5 @@
 import React from "react";
-import {AppBar, Divider, Drawer, Toolbar, Typography} from "@material-ui/core";
+import {AppBar, Drawer, Toolbar, Typography} from "@material-ui/core";
 import useStyles from "./useStyles";
 
 let Readme: React.FC = () => {
@@ -22,8 +22,8 @@ let Readme: React.FC = () => {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <div className={classes.toolbar}/>
-            <Divider/>
+            {/*<div className={classes.toolbar}/>*/}
+            {/*<Divider/>*/}
         </Drawer>
     )
 };

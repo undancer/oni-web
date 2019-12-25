@@ -2,7 +2,6 @@ import React from "react";
 import {
     AppBar,
     Chip,
-    Divider,
     Drawer,
     ExpansionPanel,
     ExpansionPanelDetails,
@@ -57,8 +56,8 @@ let Detail: React.FC = () => {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <div className={classes.toolbar}/>
-            <Divider/>
+            {/*<div className={classes.toolbar}/>*/}
+            {/*<Divider/>*/}
             <List>
                 <ListItem alignItems={"center"}>
                     <img style={{maxWidth: 256, margin: "auto", display: "block"}} src={src}
