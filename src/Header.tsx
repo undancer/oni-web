@@ -1,7 +1,7 @@
-import {AppBar, InputBase, Toolbar, Typography} from "@material-ui/core";
+import {AppBar, Toolbar, Typography} from "@material-ui/core";
 import React from "react";
 import useStyles from "./useStyles";
-import {Search as SearchIcon} from "@material-ui/icons"
+//import Search from "./Search";
 
 let Header: React.FC = () => {
     let classes = useStyles();
@@ -11,19 +11,7 @@ let Header: React.FC = () => {
                 <Typography className={classes.title} variant="h6" noWrap>
                     Material-UI
                 </Typography>
-                <div className={classes.search}>
-                    <div className={classes.searchIcon}>
-                        <SearchIcon />
-                    </div>
-                    <InputBase
-                        placeholder="Search…"
-                        classes={{
-                            root: classes.inputRoot,
-                            input: classes.inputInput,
-                        }}
-                        inputProps={{ 'aria-label': 'search' }}
-                    />
-                </div>
+                {/*<Search/>*/}
             </Toolbar>
         </AppBar>
     );
