@@ -1,13 +1,19 @@
-import React, {Suspense} from 'react';
+import React, {lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import {IntlProvider} from "react-intl";
 import * as serviceWorker from './serviceWorker';
 import languages from "./config/strings";
 import {BrowserRouter as Router,} from "react-router-dom";
 import {jssPreset, StylesProvider} from '@material-ui/core';
 import {create} from 'jss';
+
+const App = lazy(() => import("./App"));
+
+let Loading: React.FC = () => {
+    console.log("loading...");
+    return (<div>loading...</div>)
+};
 
 let Root = () => {
     let messages: any = languages();
@@ -18,13 +24,7 @@ let Root = () => {
     });
 
     return (
-        <Suspense fallback={() => {
-            console.log("fallback");
-            return (
-                <div>Loading...</div>
-            );
-        }
-        }>
+        <Suspense fallback={<Loading/>}>
             <IntlProvider locale={locale} messages={messages[locale]}>
                 <StylesProvider jss={jss}>
                     <Router>
