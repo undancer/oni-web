@@ -11,7 +11,9 @@ const schema = buildSchema(`
 `);
 
 let root = {
-    hello: () => ([{id: 1, name: 'name1'}, {id: 2, name: 'name2'}])
+    hello: () => {
+        return ([{id: 1, name: 'name1'}, {id: 2, name: 'name2'}])
+    }
 };
 let query = `
 query {

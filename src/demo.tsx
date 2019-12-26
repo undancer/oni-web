@@ -4,10 +4,8 @@ import {ApolloProvider, useQuery} from "@apollo/react-hooks";
 import ApolloClient, {gql, InMemoryCache} from "apollo-boost";
 import {loader} from 'graphql.macro';
 
-const cache = new InMemoryCache();
-
 const GET_POKEMONS = gql(`
-    query get {
+    query {
       user @client {
         name
       }
@@ -37,6 +35,8 @@ let App: React.FC = () => {
         </div>
     )
 };
+
+const cache = new InMemoryCache();
 
 const client = new ApolloClient({
 //    uri: "https://graphql-pokemon.now.sh/graphql",
