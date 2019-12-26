@@ -1,12 +1,7 @@
 import React, {lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import {IntlProvider} from "react-intl";
 import * as serviceWorker from './serviceWorker';
-import languages from "./config/strings";
-import {BrowserRouter as Router,} from "react-router-dom";
-import {jssPreset, StylesProvider} from '@material-ui/core';
-import {create} from 'jss';
 
 const App = lazy(() => import("./App"));
 
@@ -15,26 +10,11 @@ let Loading: React.FC = () => {
     return (<div>loading...</div>)
 };
 
-let Root = () => {
-    let messages: any = languages();
-    let locale = navigator.language;
-
-    const jss = create({
-        plugins: [...jssPreset().plugins],
-    });
-
-    return (
-        <Suspense fallback={<Loading/>}>
-            <IntlProvider locale={locale} messages={messages[locale]}>
-                <StylesProvider jss={jss}>
-                    <Router>
-                        <App/>
-                    </Router>
-                </StylesProvider>
-            </IntlProvider>
-        </Suspense>
-    )
-};
+let Root = () => (
+    <Suspense fallback={<Loading/>}>
+        <App/>
+    </Suspense>
+);
 
 ReactDOM.render(<Root/>, document.getElementById('root'));
 
