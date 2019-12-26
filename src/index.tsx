@@ -17,10 +17,9 @@ let Root = () => {
         plugins: [...jssPreset().plugins],
     });
 
-    // @ts-ignore
     return (
         <IntlProvider locale={locale} messages={messages[locale]}>
-            <StylesProvider injectFirst jss={jss}>
+            <StylesProvider jss={jss}>
                 <Router>
                     <App/>
                 </Router>

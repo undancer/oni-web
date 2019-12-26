@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React from "react";
 import {
     AppBar,
     Chip,
@@ -18,12 +18,11 @@ import {
     ArrowRight as ArrowRightIcon,
     ExpandMore as ExpandMoreIcon
 } from "@material-ui/icons";
-import r from "../reducers"
 import Helmet from "react-helmet";
 import {useParams} from "react-router";
 import image from "../data/image";
 import entities from "../data/elements.json";
-import {kelvinToCelsius} from "../utils/temperature";
+import EntityStateTransition from "./EntityStateTransition";
 
 let EntityDetail: React.FC = () => {
     let classes = useStyles();
@@ -38,7 +37,7 @@ let EntityDetail: React.FC = () => {
     let tags: [any] = data.Tags;
     // console.log(data);
 
-    const [state, dispatch] = React.useReducer(r.reducer, r.initialState);
+    // const [state, dispatch] = React.useReducer(r.reducer, r.initialState);
 
     let transitionLeft = data.lowTempTransitionTarget ? {name: data.lowTempTransitionTarget, temp: data.lowTemp} : null;
     let transitionRight = data.highTempTransitionTarget ? {
@@ -46,35 +45,6 @@ let EntityDetail: React.FC = () => {
         temp: data.highTemp
     } : null;
     let transitionCurrent = {name: name, temp: null};
-
-    const Transition: React.FC<any> = (props: { data: { name: string, temp?: number } | null }) => {
-        if (props.data) {
-            const {name, temp} = props.data;
-            const src = image(name);
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            let intl = useIntl();
-            let celsius = intl.formatMessage({id: 'STRINGS.UI.UNITSUFFIXES.TEMPERATURE.CELSIUS'});
-
-            let tempPart = temp ? (
-                <Typography>
-                    {kelvinToCelsius(temp).toFixed(2)}{celsius}
-                </Typography>
-            ) : null;
-
-            return (
-                <Fragment>
-                    <a href={'/details/' + name}>
-                        <img style={{maxWidth: 48, margin: "auto", display: "block"}}
-                             src={src}
-                             alt={name}
-                        />
-                    </a>
-                    {tempPart}
-                </Fragment>
-            )
-        }
-        return null;
-    };
 
     return (
         <Drawer
@@ -103,7 +73,6 @@ let EntityDetail: React.FC = () => {
                 <ListItem alignItems={"center"}>
                     <img style={{maxWidth: 256, margin: "auto", display: "block"}} src={src}
                          alt={'algae'} onClick={() => {
-                        dispatch({type: 'increment'})
                     }}/>
                 </ListItem>
                 <ListItem>
@@ -128,19 +97,19 @@ let EntityDetail: React.FC = () => {
             <ExpansionPanel expanded={true}>
                 <ExpansionPanelDetails style={{margin: "auto", justifyContent: "center"}}>
                     <div>
-                        <Transition data={transitionLeft}/>
+                        <EntityStateTransition data={transitionLeft}/>
                     </div>
                     <div>
                         <ArrowLeftIcon/>
                     </div>
                     <div>
-                        <Transition data={transitionCurrent}/>
+                        <EntityStateTransition data={transitionCurrent}/>
                     </div>
                     <div>
                         <ArrowRightIcon/>
                     </div>
                     <div>
-                        <Transition data={transitionRight}/>
+                        <EntityStateTransition data={transitionRight}/>
                     </div>
 
                 </ExpansionPanelDetails>
