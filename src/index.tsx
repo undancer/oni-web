@@ -2,13 +2,9 @@ import React, {lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
+import Loading from "./Loading";
 
 const App = lazy(() => import("./App"));
-
-let Loading: React.FC = () => {
-    console.log("loading...");
-    return (<div>loading...</div>)
-};
 
 let Root = () => (
     <Suspense fallback={<Loading/>}>
