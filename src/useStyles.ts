@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme: Theme) =>
         grow: {
             flexGrow: 1,
         },
-        heading: {},
         expansion: {
             marginLeft: theme.spacing(1),
             marginRight: theme.spacing(1),
@@ -111,13 +110,6 @@ const useStyles = makeStyles((theme: Theme) =>
             textAlign: 'center',
             color: theme.palette.text.secondary,
             wordBreak: 'break-all'
-        },
-        chip: {
-            '& > *': {
-                margin: theme.spacing(1 / 2),
-            },
-            flexWrap: "wrap",
-            justifyContent: "center",
         },
         entityImage: {
             maxWidth: theme.spacing(8),

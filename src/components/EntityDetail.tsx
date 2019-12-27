@@ -1,7 +1,6 @@
 import React from "react";
 import {
     AppBar,
-    Chip,
     createStyles,
     Drawer,
     ExpansionPanel,
@@ -15,7 +14,6 @@ import {
     Typography
 } from "@material-ui/core";
 import useStyles from "../useStyles";
-import {FormattedHTMLMessage, useIntl} from "react-intl";
 import {
     ArrowLeft as ArrowLeftIcon,
     ArrowRight as ArrowRightIcon,
@@ -29,12 +27,21 @@ import EntityStateTransition from "./EntityStateTransition";
 import EntityImage from "./EntityImage";
 import clsx from "clsx";
 import EntityText from "./EntityText";
+import EntityTag from "./EntityTag";
 
 let useStylesSelf = makeStyles((theme: Theme) =>
     createStyles({
+            heading: {},
             detail: {
                 padding: theme.spacing(2)
                 // margin: theme.spacing(1, 2)
+            },
+            chip: {
+                '& > *': {
+                    margin: theme.spacing(1 / 2),
+                },
+                flexWrap: "wrap",
+                justifyContent: "center",
             },
         }
     )
@@ -45,14 +52,12 @@ let EntityDetail: React.FC = () => {
     let self = useStylesSelf();
 
     let {name} = useParams();
-    let intl = useIntl();
 
     name = name || "";
 
     let data: any = entities.find((entity) => entity.Id === name);
     let src = image(data.Id);
     let tags: [any] = data.Tags;
-    // console.log(data);
 
     // const [state, dispatch] = React.useReducer(r.reducer, r.initialState);
 
@@ -80,9 +85,9 @@ let EntityDetail: React.FC = () => {
         >
             <AppBar position="sticky">
                 <Toolbar>
-                    <Typography variant="h6" className={classes.title}>
-                        <FormattedHTMLMessage id={(`STRINGS.ELEMENTS.` + name + `.NAME`).toUpperCase()}/>
-                    </Typography>
+                    <EntityText id={(`STRINGS.ELEMENTS.` + name + `.NAME`).toUpperCase()}
+                                variant="h6"
+                                className={classes.title}/>
                 </Toolbar>
             </AppBar>
             {/*<div className={classes.toolbar}/>*/}
@@ -104,14 +109,11 @@ let EntityDetail: React.FC = () => {
                     />
                 </Grid>
                 <Grid item container justify={"center"}>
-                    <ListItem className={classes.chip}>
+                    <ListItem className={self.chip}>
                         {
-                            tags.map((tag) => {
-                                let label: string = ('STRINGS.MISC.TAGS.' + tag).toUpperCase();
-
-                                return (<Chip key={tag} variant="outlined" size="small"
-                                              label={intl.formatMessage({id: label})}/>)
-                            })
+                            tags.map(tag =>
+                                <EntityTag id={('STRINGS.MISC.TAGS.' + tag).toUpperCase()}/>
+                            )
                         }
                     </ListItem>
                 </Grid>
@@ -154,7 +156,7 @@ let EntityDetail: React.FC = () => {
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >
-                                <Typography className={classes.heading}>Expansion Panel {index}</Typography>
+                                <Typography className={self.heading}>Expansion Panel {index}</Typography>
                             </ExpansionPanelSummary>
                             <ExpansionPanelDetails>
                                 <Typography>

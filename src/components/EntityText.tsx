@@ -1,6 +1,7 @@
 import React from "react";
 import {useIntl} from "react-intl";
 import {Typography, TypographyProps} from "@material-ui/core";
+import {fix} from "../utils/strings";
 
 interface EntityTextProps {
     id?: string
@@ -8,12 +9,6 @@ interface EntityTextProps {
     html?: boolean
     defaultMessage?: string
 }
-
-const fix = (value: string = "") => {
-    return value
-        .replace(/<link=".*">/g, '')
-        .replace(/<\/link>/g, '')
-};
 
 let EntityText: React.FC<EntityTextProps & TypographyProps> = (props) => {
     const intl = useIntl();
