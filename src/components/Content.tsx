@@ -1,8 +1,8 @@
 import React from "react";
-import {createStyles, Grid, makeStyles, Theme, Typography,} from "@material-ui/core";
+import {createStyles, Grid, makeStyles, MenuItem, Select, Theme, Typography,} from "@material-ui/core";
 import ElementEntity from "./ElementEntity";
-import entities from "../data/elements.json";
-import image from "../data/image";
+import data from "../stores";
+import {FormattedMessage} from "react-intl";
 
 
 let useStyles = makeStyles((theme: Theme) => createStyles({
@@ -12,6 +12,9 @@ let useStyles = makeStyles((theme: Theme) => createStyles({
             backgroundColor: theme.palette.background.default,
             padding: theme.spacing(2),
         },
+        toolbar2: {
+            margin: theme.spacing(2),
+        },
     })
 );
 
@@ -19,9 +22,15 @@ let Content: React.FC = (props: any) => {
     const classes = useStyles();
     const version = process.env.REACT_APP_VERSION;
 
-    // const handleClick1: MouseEventHandler<any> = (event) => {
-    //     event.defaultPrevented = false;
-    // };
+    const [state, setState] = React.useState("vacuum");
+
+    const states = ["vacuum", "gas", "liquid", "solid"];
+
+    const entities = data.elements(state);
+
+    const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+        setState(event.target.value as string);
+    };
 
     return (
         <main className={classes.content}>
@@ -37,8 +46,6 @@ let Content: React.FC = (props: any) => {
             {/*    <Typography color="textPrimary">Breadcrumb</Typography>*/}
             {/*</Breadcrumbs>*/}
 
-            {/*<Toolbar></Toolbar>*/}
-
             <Grid
                 container
                 direction="row"
@@ -51,6 +58,31 @@ let Content: React.FC = (props: any) => {
                 </Typography>
             </Grid>
 
+            {/*<Toolbar></Toolbar>*/}
+
+
+            <Grid container
+                  direction="row"
+                  justify={"center"}
+                  className={classes.toolbar2}
+            >
+                <Select
+                    // labelId="demo-simple-select-outlined-label"
+                    // id="demo-simple-select-outlined"
+                    value={state}
+                    onChange={handleChange}
+                    // labelWidth={labelWidth}
+                >
+                    {
+                        states.map(state => (
+                            <MenuItem key={state} value={state}>
+                                <FormattedMessage id={(`STRINGS.ELEMENTS.STATE.` + state).toUpperCase()}/>
+                            </MenuItem>
+                        ))
+                    }
+                </Select>
+            </Grid>
+
             <Grid container
                   direction="row"
                   justify="center"
@@ -59,10 +91,7 @@ let Content: React.FC = (props: any) => {
             >
 
                 {
-                    entities.map(
-                        entity =>
-                            <ElementEntity key={entity.Id} name={entity.Id} src={image(entity.Id)}/>
-                    )
+                    entities.map(entity => <ElementEntity key={entity.Id} name={entity.Id}/>)
                 }
 
             </Grid>

@@ -1,44 +1,52 @@
-import React, {Fragment, MouseEvent} from "react";
-import {Grid, Paper, Typography} from "@material-ui/core";
+import React, {MouseEvent} from "react";
+import {createStyles, makeStyles, Paper, Theme, Typography} from "@material-ui/core";
 import {FormattedHTMLMessage} from "react-intl";
-import e from "../reducers";
-import {clickEntry} from "../actions";
 import {useHistory} from "react-router-dom";
-import useStyles from "../useStyles";
 import EntityImage from "./EntityImage";
+import image from "../data/image";
+
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles(
+        {
+            paper: {
+                width: theme.spacing(8 + 1 * 2),
+                height: theme.spacing(15),
+                padding: theme.spacing(1),
+                margin: theme.spacing(1 / 2),
+                textAlign: 'center',
+                color: theme.palette.text.secondary,
+                wordBreak: 'break-all'
+            },
+        }
+    )
+);
 
 
 interface ElementProps {
     name: string,
-    src: any,
 }
 
 let ElementEntity: React.FC<ElementProps> = (props: ElementProps) => {
 
     const classes = useStyles();
-    const {name, src} = props;
-    const initialState: any = {};
+    const {name} = props;
     const history = useHistory();
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [state, dispatch] = React.useReducer(e.elementReducer, initialState);
+    const src = image(name);
 
     const handleClick = (event: MouseEvent) => {
         history.push("/details/" + name);
-        clickEntry(name)(dispatch);
     };
 
     return (
-        <Fragment>
-            <Grid item>
-                <Paper className={classes.paper} onClick={handleClick}>
-                    <EntityImage size={8} src={src} alt={name}/>
-                    <Typography variant="body2" display="block" gutterBottom>
-                        <FormattedHTMLMessage id={`STRINGS.ELEMENTS.${name}.NAME`.toUpperCase()}/>
-                    </Typography>
-                </Paper>
-            </Grid>
-        </Fragment>
+        <>
+            <Paper className={classes.paper} onClick={handleClick}>
+                <EntityImage size={8} src={src} alt={name}/>
+                <Typography variant="body2" display="block" gutterBottom>
+                    <FormattedHTMLMessage id={`STRINGS.ELEMENTS.${name}.NAME`.toUpperCase()}/>
+                </Typography>
+            </Paper>
+        </>
     )
 };
 export default ElementEntity;

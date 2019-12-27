@@ -13,6 +13,8 @@ let useStyles = makeStyles((theme: Theme) =>
             image: (props: { size: number }) => ({
                 maxWidth: theme.spacing(props.size),
                 maxHeight: theme.spacing(props.size),
+                width: theme.spacing(props.size),
+                height: theme.spacing(props.size),
             }),
         }
     )
