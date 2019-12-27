@@ -115,27 +115,33 @@ let EntityDetail: React.FC = () => {
                         }
                     </ListItem>
                 </Grid>
-                <Grid item container justify={"center"}>
-                    <ExpansionPanel expanded={true}>
-                        <ExpansionPanelDetails style={{margin: "auto", justifyContent: "center"}}>
-                            <div>
-                                <EntityStateTransition data={transitionLeft}/>
-                            </div>
-                            <div>
-                                <ArrowLeftIcon/>
-                            </div>
-                            <div>
-                                <EntityStateTransition data={transitionCurrent}/>
-                            </div>
-                            <div>
-                                <ArrowRightIcon/>
-                            </div>
-                            <div>
-                                <EntityStateTransition data={transitionRight}/>
-                            </div>
+                <Grid item container justify="center">
+                    <Grid container
+                          direction="row"
+                          justify="center"
+                          alignItems="center"
+                    >
+                        <Grid item>
+                            <EntityStateTransition data={transitionLeft}/>
+                        </Grid>
 
-                        </ExpansionPanelDetails>
-                    </ExpansionPanel>
+                        <Grid item>
+                            <ArrowLeftIcon/>
+                        </Grid>
+
+                        <Grid item>
+                            <EntityStateTransition data={transitionCurrent}/>
+                        </Grid>
+
+                        <Grid item>
+                            <ArrowRightIcon/>
+                        </Grid>
+
+                        <Grid item>
+                            <EntityStateTransition data={transitionRight}/>
+                        </Grid>
+                    </Grid>
+
                 </Grid>
             </Grid>
 

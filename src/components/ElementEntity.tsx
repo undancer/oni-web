@@ -8,6 +8,10 @@ import EntityText from "./EntityText";
 const useStyles = makeStyles((theme: Theme) =>
     createStyles(
         {
+            a: {
+                color: theme.palette.text.primary,
+                textDecoration: "none",
+            },
             paper: {
                 width: theme.spacing(8 + 1 * 2),
                 height: theme.spacing(15),
@@ -34,19 +38,20 @@ let ElementEntity: React.FC<ElementProps> = (props: ElementProps) => {
 
     const src = image(name);
 
-    const handleClick = (event: MouseEvent) => {
-        history.push("/details/" + name);
+    const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
+        event.preventDefault();
+        history.push('/details/' + name);
     };
 
     return (
-        <>
-            <Paper className={classes.paper} onClick={handleClick}>
+        <a href={'/details/' + name} onClick={handleClick} className={classes.a}>
+            <Paper className={classes.paper}>
                 <EntityImage size={8} src={src} alt={name}/>
                 <EntityText id={`STRINGS.ELEMENTS.${name}.NAME`.toUpperCase()}
                             variant="body2" display="block" gutterBottom
                 />
             </Paper>
-        </>
+        </a>
     )
 };
 export default ElementEntity;
