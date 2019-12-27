@@ -28,6 +28,7 @@ import entities from "../data/elements.json";
 import EntityStateTransition from "./EntityStateTransition";
 import EntityImage from "./EntityImage";
 import clsx from "clsx";
+import EntityText from "./EntityText";
 
 let useStylesSelf = makeStyles((theme: Theme) =>
     createStyles({
@@ -55,12 +56,18 @@ let EntityDetail: React.FC = () => {
 
     // const [state, dispatch] = React.useReducer(r.reducer, r.initialState);
 
-    let transitionLeft = data.lowTempTransitionTarget ? {name: data.lowTempTransitionTarget, temp: data.lowTemp} : null;
+    let transitionLeft = data.lowTempTransitionTarget ? {
+        name: data.lowTempTransitionTarget,
+        temp: data.lowTemp
+    } : null;
     let transitionRight = data.highTempTransitionTarget ? {
         name: data.highTempTransitionTarget,
         temp: data.highTemp
     } : null;
-    let transitionCurrent = {name: name, temp: null};
+    let transitionCurrent = {
+        name: name,
+        temp: null
+    };
 
     return (
         <Drawer
@@ -90,10 +97,11 @@ let EntityDetail: React.FC = () => {
                     <EntityImage size={16} src={src} alt={name}/>
                 </Grid>
                 <Grid item container justify={"center"}>
-                    <Typography variant="caption" display="block">
-                        <FormattedHTMLMessage id={(`STRINGS.ELEMENTS.` + name + `.DESC`).toUpperCase()}
-                                              defaultMessage={"信息缺失"}/>
-                    </Typography>
+                    <EntityText id={(`STRINGS.ELEMENTS.` + name + `.DESC`).toUpperCase()}
+                                defaultMessage={"信息缺失"}
+                                variant="caption" display="block"
+                                html={true}
+                    />
                 </Grid>
                 <Grid item container justify={"center"}>
                     <ListItem className={classes.chip}>

@@ -1,9 +1,9 @@
 import React, {MouseEvent} from "react";
-import {createStyles, makeStyles, Paper, Theme, Typography} from "@material-ui/core";
-import {FormattedHTMLMessage} from "react-intl";
+import {createStyles, makeStyles, Paper, Theme} from "@material-ui/core";
 import {useHistory} from "react-router-dom";
 import EntityImage from "./EntityImage";
 import image from "../data/image";
+import EntityText from "./EntityText";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles(
@@ -42,9 +42,9 @@ let ElementEntity: React.FC<ElementProps> = (props: ElementProps) => {
         <>
             <Paper className={classes.paper} onClick={handleClick}>
                 <EntityImage size={8} src={src} alt={name}/>
-                <Typography variant="body2" display="block" gutterBottom>
-                    <FormattedHTMLMessage id={`STRINGS.ELEMENTS.${name}.NAME`.toUpperCase()}/>
-                </Typography>
+                <EntityText id={`STRINGS.ELEMENTS.${name}.NAME`.toUpperCase()}
+                            variant="body2" display="block" gutterBottom
+                />
             </Paper>
         </>
     )
