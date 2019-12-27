@@ -73,12 +73,7 @@ const useStyles = makeStyles((theme: Theme) =>
         drawerPaper: {
             width: drawerWidth,
         },
-        toolbar: theme.mixins.toolbar,
-        content: {
-            flexGrow: 1,
-            backgroundColor: theme.palette.background.default,
-            padding: theme.spacing(3),
-        },
+
         button: {
             display: 'block',
             marginTop: theme.spacing(2),

@@ -4,6 +4,7 @@ import {useIntl} from "react-intl";
 import {Typography} from "@material-ui/core";
 import {kelvinToCelsius} from "../utils/temperature";
 import {withRouter} from "react-router-dom";
+import EntityImage from "./EntityImage";
 
 const EntityStateTransition: React.FC<any> = (props: { data: { name: string, temp?: number } | null } & { history: any }) => {
     if (props.data) {
@@ -19,7 +20,7 @@ const EntityStateTransition: React.FC<any> = (props: { data: { name: string, tem
                 {kelvinToCelsius(temp).toFixed(2)}{celsius}
             </Typography>
         ) : null;
-        
+
         const handleClick = (event: MouseEvent) => {
             event.preventDefault();
             history.push("/details/" + name);
@@ -28,12 +29,11 @@ const EntityStateTransition: React.FC<any> = (props: { data: { name: string, tem
         return (
             <Fragment>
                 <a href={'/details/' + name} onClick={handleClick}>
-                    <img style={{maxWidth: 48, margin: "auto", display: "block"}}
-                         src={src}
-                         alt={name}
-                    />
+                    <EntityImage src={src} alt={name} size={4}/>
                 </a>
-                {tempPart}
+                <Typography variant={"caption"}>
+                    {tempPart}
+                </Typography>
             </Fragment>
         )
     }

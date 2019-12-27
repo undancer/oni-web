@@ -1,12 +1,23 @@
 import React from "react";
-import {Drawer, Grid,} from "@material-ui/core";
-import useStyles from "../useStyles";
+import {createStyles, Grid, makeStyles, Theme, Typography,} from "@material-ui/core";
 import ElementEntity from "./ElementEntity";
 import entities from "../data/elements.json";
 import image from "../data/image";
 
+
+let useStyles = makeStyles((theme: Theme) => createStyles({
+        toolbar: theme.mixins.toolbar,
+        content: {
+            flexGrow: 1,
+            backgroundColor: theme.palette.background.default,
+            padding: theme.spacing(2),
+        },
+    })
+);
+
 let Content: React.FC = (props: any) => {
     const classes = useStyles();
+    const version = process.env.REACT_APP_VERSION;
 
     // const handleClick1: MouseEventHandler<any> = (event) => {
     //     event.defaultPrevented = false;
@@ -28,13 +39,24 @@ let Content: React.FC = (props: any) => {
 
             {/*<Toolbar></Toolbar>*/}
 
-            <Drawer/>
+            <Grid
+                container
+                direction="row"
+                justify="flex-end"
+                alignItems="flex-start"
+                spacing={1}
+            >
+                <Typography variant={"body2"}>
+                    version: {version}
+                </Typography>
+            </Grid>
 
             <Grid container
                   direction="row"
                   justify="center"
                   alignItems="flex-start"
-                  spacing={1}>
+                  spacing={1}
+            >
 
                 {
                     entities.map(

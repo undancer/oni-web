@@ -2,12 +2,15 @@ import React from "react";
 import {
     AppBar,
     Chip,
+    createStyles,
     Drawer,
     ExpansionPanel,
     ExpansionPanelDetails,
     ExpansionPanelSummary,
-    List,
+    Grid,
     ListItem,
+    makeStyles,
+    Theme,
     Toolbar,
     Typography
 } from "@material-ui/core";
@@ -23,9 +26,22 @@ import {useParams} from "react-router";
 import image from "../data/image";
 import entities from "../data/elements.json";
 import EntityStateTransition from "./EntityStateTransition";
+import EntityImage from "./EntityImage";
+import clsx from "clsx";
+
+let useStylesSelf = makeStyles((theme: Theme) =>
+    createStyles({
+            detail: {
+                padding: theme.spacing(2)
+                // margin: theme.spacing(1, 2)
+            },
+        }
+    )
+);
 
 let EntityDetail: React.FC = () => {
     let classes = useStyles();
+    let self = useStylesSelf();
 
     let {name} = useParams();
     let intl = useIntl();
@@ -48,18 +64,13 @@ let EntityDetail: React.FC = () => {
 
     return (
         <Drawer
-            className={classes.drawer}
+            className={clsx(classes.drawer)}
             variant="permanent"
             classes={{
                 paper: classes.drawerPaper,
             }}
             anchor="right"
         >
-            <Helmet>
-                <meta charSet="utf-8"/>
-                <title>{name}</title>
-                <link rel="canonical" href="http://mysite.com/example"/>
-            </Helmet>
             <AppBar position="sticky">
                 <Toolbar>
                     <Typography variant="h6" className={classes.title}>
@@ -69,51 +80,57 @@ let EntityDetail: React.FC = () => {
             </AppBar>
             {/*<div className={classes.toolbar}/>*/}
             {/*<Divider/>*/}
-            <List>
-                <ListItem alignItems={"center"}>
-                    <img style={{maxWidth: 256, margin: "auto", display: "block"}} src={src}
-                         alt={'algae'} onClick={() => {
-                    }}/>
-                </ListItem>
-                <ListItem>
+            <Helmet>
+                <meta charSet="utf-8"/>
+                <title>{name}</title>
+                <link rel="canonical" href="http://mysite.com/example"/>
+            </Helmet>
+            <Grid container className={self.detail}>
+                <Grid item container justify={"center"}>
+                    <EntityImage size={16} src={src} alt={name}/>
+                </Grid>
+                <Grid item container justify={"center"}>
                     <Typography variant="caption" display="block">
                         <FormattedHTMLMessage id={(`STRINGS.ELEMENTS.` + name + `.DESC`).toUpperCase()}
                                               defaultMessage={"信息缺失"}/>
                     </Typography>
-                </ListItem>
-                <ListItem className={classes.chip}>
-                    {
-                        tags.map((tag) => {
-                            let label: string = ('STRINGS.MISC.TAGS.' + tag).toUpperCase();
+                </Grid>
+                <Grid item container justify={"center"}>
+                    <ListItem className={classes.chip}>
+                        {
+                            tags.map((tag) => {
+                                let label: string = ('STRINGS.MISC.TAGS.' + tag).toUpperCase();
 
-                            return (<Chip key={tag} variant="outlined" size="small"
-                                          label={intl.formatMessage({id: label})}/>)
-                        })
-                    }
-                </ListItem>
-            </List>
+                                return (<Chip key={tag} variant="outlined" size="small"
+                                              label={intl.formatMessage({id: label})}/>)
+                            })
+                        }
+                    </ListItem>
+                </Grid>
+                <Grid item container justify={"center"}>
+                    <ExpansionPanel expanded={true}>
+                        <ExpansionPanelDetails style={{margin: "auto", justifyContent: "center"}}>
+                            <div>
+                                <EntityStateTransition data={transitionLeft}/>
+                            </div>
+                            <div>
+                                <ArrowLeftIcon/>
+                            </div>
+                            <div>
+                                <EntityStateTransition data={transitionCurrent}/>
+                            </div>
+                            <div>
+                                <ArrowRightIcon/>
+                            </div>
+                            <div>
+                                <EntityStateTransition data={transitionRight}/>
+                            </div>
 
+                        </ExpansionPanelDetails>
+                    </ExpansionPanel>
+                </Grid>
+            </Grid>
 
-            <ExpansionPanel expanded={true}>
-                <ExpansionPanelDetails style={{margin: "auto", justifyContent: "center"}}>
-                    <div>
-                        <EntityStateTransition data={transitionLeft}/>
-                    </div>
-                    <div>
-                        <ArrowLeftIcon/>
-                    </div>
-                    <div>
-                        <EntityStateTransition data={transitionCurrent}/>
-                    </div>
-                    <div>
-                        <ArrowRightIcon/>
-                    </div>
-                    <div>
-                        <EntityStateTransition data={transitionRight}/>
-                    </div>
-
-                </ExpansionPanelDetails>
-            </ExpansionPanel>
             {
                 [1, 2, 3, 4, 5].map(index => {
                     return (

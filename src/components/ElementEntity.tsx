@@ -32,8 +32,8 @@ let ElementEntity: React.FC<ElementProps> = (props: ElementProps) => {
         <Fragment>
             <Grid item>
                 <Paper className={classes.paper} onClick={handleClick}>
-                    <EntityImage src={src} alt={name} className={classes.entityImage}/>
-                    <Typography variant="caption" display="block" gutterBottom>
+                    <EntityImage size={8} src={src} alt={name}/>
+                    <Typography variant="body2" display="block" gutterBottom>
                         <FormattedHTMLMessage id={`STRINGS.ELEMENTS.${name}.NAME`.toUpperCase()}/>
                     </Typography>
                 </Paper>
