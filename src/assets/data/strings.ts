@@ -25,4 +25,12 @@ export const strings = (lang: string) => {
     return language;
 };
 
+export const getString = (key: string) => {
+    const str = strings(navigator.language);
+    if (str[key]) {
+        return str[key];
+    }
+    return null;
+};
+
 export default languages;

@@ -1,7 +1,7 @@
 import React from "react";
 import {Chip} from "@material-ui/core";
 import {useIntl} from "react-intl";
-import {fix} from "../utils/strings";
+import {fix} from "../../utils/strings";
 
 interface EntityTagProps {
     id: string

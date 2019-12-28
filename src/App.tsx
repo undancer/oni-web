@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from "./components/Header";
-import EntityDetail from "./components/EntityDetail";
+import EntityDetail from "./components/detail/EntityDetail";
 import Content from "./components/Content";
 import {CssBaseline, jssPreset, StylesProvider} from "@material-ui/core";
 import Footer from "./components/Footer";

@@ -12,13 +12,13 @@ import {
     Toolbar,
     Typography
 } from "@material-ui/core";
-import useStyles from "../useStyles";
+import useStyles from "../../useStyles";
 import {ExpandMore as ExpandMoreIcon} from "@material-ui/icons";
 import Helmet from "react-helmet";
 import {useParams} from "react-router";
 import clsx from "clsx";
-import EntityText from "./EntityText";
-import {getEntity} from "../stores";
+import EntityText from "../EntityText";
+import {getEntity} from "../../stores";
 import EntityDetailBase from "./EntityDetailBase";
 import ElementPhaseTransitionPanel from "./ElementPhaseTransitionPanel";
 import EntityTagsPanel from "./EntityTagsPanel";

@@ -1,10 +1,10 @@
 import React, {Fragment, MouseEvent} from "react";
-import image from "../assets/data/image";
+import image from "../../assets/data/image";
 import {useIntl} from "react-intl";
 import {useHistory} from "react-router-dom";
-import EntityImage from "./EntityImage";
-import EntityText from "./EntityText";
-import {kelvinToCelsius} from "../utils/temperature";
+import EntityImage from "./../EntityImage";
+import EntityText from "./../EntityText";
+import {kelvinToCelsius} from "../../utils/temperature";
 import {createStyles, makeStyles, Paper, Theme} from "@material-ui/core";
 
 interface EntityStateTransitionProps {
