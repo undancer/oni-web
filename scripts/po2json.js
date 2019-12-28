@@ -67,7 +67,7 @@ const main = () => {
     for (let [key, value] of Object.entries(messages)) {
         console.log(key);
 
-        let savePath = path.join(__dirname, '../src/strings');
+        let savePath = path.join(__dirname, '../src/assets/strings');
 
         if (!fs.existsSync(savePath)) {
             fs.mkdirSync(savePath, {recursive: true})
