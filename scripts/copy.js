@@ -18,27 +18,31 @@ let findFile = (root, ext = '.png') => {
     return list;
 };
 
-let path = "/Users/undancer/oni/assets/elements";
-let save = p.join(__dirname, "../src/image/elements");
-if (!fs.existsSync(save)) {
-    fs.mkdirSync(save, {recursive: true})
-}
-let files = findFile(path);
-let targets = [];
-files.forEach(file => {
-    let name = p.basename(file, '.png').toLowerCase();
-    let target = p.join(save, name + '.png');
-    fs.copyFileSync(file, target);
-    targets.push(name);
-});
+["elements","buildings"].forEach(value => {
+    let path = "/Users/undancer/oni/assets/" + value;
+    let save = p.join(__dirname, "../src/image/" + value);
 
-let lines = [];
+    if (!fs.existsSync(save)) {
+        fs.mkdirSync(save, {recursive: true})
+    }
+    let files = findFile(path);
+    let targets = [];
+    files.forEach(file => {
+        let name = p.basename(file, '.png').toLowerCase();
+        let target = p.join(save, name + '.png');
+        fs.copyFileSync(file, target);
+        targets.push(name);
+    });
 
-targets.forEach(target => {
-    lines.push(`import _${target} from './elements/${target}.png';`);
+    let lines = [];
+
+    targets.forEach(target => {
+        lines.push(`import _${target} from './${value}/${target}.png';`);
+    });
+    lines.push(`let ${value} = { ${targets.map(target => `${target}:_${target}`).join(',')} };`);
+    lines.push(`export default ${value};`);
+    let file = p.join(save, `../${value}.ts`);
+    fs.writeFileSync(file, lines.join('\n'));
+    console.log(file);
+
 });
-lines.push(`let elements = { ${targets.map(target => `${target}:_${target}`).join(',')} };`);
-lines.push(`export default elements;`);
-let file = p.join(save, '../elements.ts');
-fs.writeFileSync(file, lines.join('\n'));
-console.log(file);
