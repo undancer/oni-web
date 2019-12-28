@@ -15,12 +15,16 @@ const EntityDetailBase: React.FC<EntityDetailBaseProps> = (props) => {
 
     let effect: string = getString((name + '.EFFECT').toLowerCase());
     if (effect) {
-        effect = effect.split('\n').map(line => '<p>' + line + '</p>').join('\n');
+        effect = effect.split('\n')
+            .map(line => line.trim() !== '' ? ('<p>' + line + '</p>') : null)
+            .join('\n');
     }
 
     let desc: string = getString((name + '.DESC').toLowerCase());
     if (desc) {
-        desc = desc.split('\n').map(line => '<p>' + line + '</p>').join('\n');
+        desc = desc.split('\n')
+            .map(line => line.trim() !== '' ? ('<p>' + line + '</p>') : null)
+            .join('\n');
     }
 
     return (
