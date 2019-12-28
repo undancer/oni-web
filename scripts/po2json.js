@@ -2,6 +2,21 @@ const po2json = require('po2json');
 const fs = require('fs');
 const path = require('path');
 
+const clearKey = (input) => {
+    let m = /^STRINGS\.(?<type>ELEMENTS|BUILDINGS)(\.PREFABS)?\.(?<name>[^.]+)\.(?<key>NAME|DESC)$/g.exec(input);
+
+    if (m) {
+        // @ts-ignore
+        let {type, name, key} = m.groups;
+        // console.log(type);
+        // console.log(name);
+        // console.log(key);
+
+        return [name, key].join('.').toLowerCase();
+    }
+    return null;
+};
+
 const main = () => {
     const {stringsPath} = require("./config_env.js");
 
@@ -41,6 +56,10 @@ const main = () => {
                     }
 
                     Object.assign(messages[language], {[key]: value});
+                    let cleanKey = clearKey(key);
+                    if (cleanKey) {
+                        Object.assign(messages[language], {[cleanKey]: value});
+                    }
                 });
             }
         });
@@ -48,7 +67,7 @@ const main = () => {
     for (let [key, value] of Object.entries(messages)) {
         console.log(key);
 
-        let savePath = path.join(__dirname,'../src/strings');
+        let savePath = path.join(__dirname, '../src/strings');
 
         if (!fs.existsSync(savePath)) {
             fs.mkdirSync(savePath, {recursive: true})
