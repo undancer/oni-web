@@ -1,5 +1,5 @@
-import _elements_db from "../image/elements";
-import _buildings_db from "../image/buildings";
+import _elements_db from "../assets/images/elements";
+import _buildings_db from "../assets/images/buildings";
 
 let image = (name: string) => {
     let key = name.toLowerCase();
