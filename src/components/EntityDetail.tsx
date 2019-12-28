@@ -112,7 +112,7 @@ let EntityDetail: React.FC = () => {
                     <ListItem className={self.chip}>
                         {
                             tags.map(tag =>
-                                <EntityTag id={('STRINGS.MISC.TAGS.' + tag).toUpperCase()}/>
+                                <EntityTag key={tag} id={('STRINGS.MISC.TAGS.' + tag).toUpperCase()}/>
                             )
                         }
                     </ListItem>
