@@ -9,7 +9,7 @@ import {Route, Switch} from "react-router";
 import Readme from "./components/Readme";
 import {BrowserRouter as Router} from "react-router-dom";
 import {IntlProvider} from "react-intl";
-import {strings} from "./data/strings";
+import {strings} from "./assets/data/strings";
 import {create} from "jss";
 
 const App: React.FC = () => {

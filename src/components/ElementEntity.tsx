@@ -2,7 +2,7 @@ import React, {MouseEvent} from "react";
 import {createStyles, makeStyles, Paper, Theme} from "@material-ui/core";
 import {useHistory} from "react-router-dom";
 import EntityImage from "./EntityImage";
-import image from "../data/image";
+import image from "../assets/data/image";
 import EntityText from "./EntityText";
 
 const useStyles = makeStyles((theme: Theme) =>

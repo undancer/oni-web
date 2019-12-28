@@ -1,5 +1,5 @@
-import _elements from "../data/elements.json";
-import _buildings from "../data/buildings.json";
+import _elements from "../assets/data/elements.json";
+import _buildings from "../assets/data/buildings.json";
 import _ from "underscore";
 
 let elements = (state: string = "vacuum") => {

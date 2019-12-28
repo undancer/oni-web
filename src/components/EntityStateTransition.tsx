@@ -1,5 +1,5 @@
 import React, {Fragment, MouseEvent} from "react";
-import image from "../data/image";
+import image from "../assets/data/image";
 import {useIntl} from "react-intl";
 import {useHistory} from "react-router-dom";
 import EntityImage from "./EntityImage";

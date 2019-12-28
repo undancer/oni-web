@@ -2,7 +2,7 @@ import React from "react";
 import {Grid} from "@material-ui/core";
 import EntityImage from "./EntityImage";
 import EntityText from "./EntityText";
-import image from "../data/image";
+import image from "../assets/data/image";
 
 interface EntityDetailBaseProps {
     name: string
