@@ -1,8 +1,7 @@
 import React from "react";
-import {createStyles, Grid, makeStyles, MenuItem, Select, Theme, Typography,} from "@material-ui/core";
-import ElementEntity from "./ElementEntity";
-import data from "../stores";
-import {FormattedMessage} from "react-intl";
+import {createStyles, Grid, makeStyles, Theme, Typography,} from "@material-ui/core";
+import {getData} from "../stores";
+import ElementsPanel from "./ElementsPanel";
 
 
 let useStyles = makeStyles((theme: Theme) => createStyles({
@@ -22,15 +21,18 @@ let Content: React.FC = (props: any) => {
     const classes = useStyles();
     const version = process.env.REACT_APP_VERSION;
 
-    const [state, setState] = React.useState("vacuum");
+    const [target, setTarget] = React.useState("elements");
 
-    const states = ["vacuum", "gas", "liquid", "solid"];
+    // buildings
 
-    const entities = data.elements(state);
-
-    const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-        setState(event.target.value as string);
+    const prefix = {
+        "buildings": "STRINGS.BUILDINGS.PREFABS.",
+        "elements": "STRINGS.ELEMENTS.STATE.",
     };
+
+    const entities = getData(target);
+
+    const Panel = ElementsPanel;
 
     return (
         <main className={classes.content}>
@@ -61,40 +63,7 @@ let Content: React.FC = (props: any) => {
             {/*<Toolbar></Toolbar>*/}
 
 
-            <Grid container
-                  direction="row"
-                  justify={"center"}
-                  className={classes.toolbar2}
-            >
-                <Select
-                    // labelId="demo-simple-select-outlined-label"
-                    // id="demo-simple-select-outlined"
-                    value={state}
-                    onChange={handleChange}
-                    // labelWidth={labelWidth}
-                >
-                    {
-                        states.map(state => (
-                            <MenuItem key={state} value={state}>
-                                <FormattedMessage id={(`STRINGS.ELEMENTS.STATE.` + state).toUpperCase()}/>
-                            </MenuItem>
-                        ))
-                    }
-                </Select>
-            </Grid>
-
-            <Grid container
-                  direction="row"
-                  justify="center"
-                  alignItems="flex-start"
-                  spacing={1}
-            >
-
-                {
-                    entities.map(entity => <ElementEntity key={entity.Id} name={entity.Id}/>)
-                }
-
-            </Grid>
+            <Panel data={entities}/>
 
             {/*<Typography paragraph>*/}
             {/*    Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla*/}
