@@ -9,21 +9,21 @@ import {Route, Switch} from "react-router";
 import Readme from "./components/Readme";
 import {BrowserRouter as Router} from "react-router-dom";
 import {IntlProvider} from "react-intl";
-import languages from "./config/strings";
+import {strings} from "./data/strings";
 import {create} from "jss";
 
 const App: React.FC = () => {
     let classes = useStyles();
 
-    let messages: any = languages();
     let locale = navigator.language;
+    let messages: any = strings(locale);
 
     const jss = create({
         plugins: [...jssPreset().plugins],
     });
 
     return (
-        <IntlProvider locale={locale} messages={messages[locale]}>
+        <IntlProvider locale={locale} messages={messages}>
             <StylesProvider jss={jss}>
                 <Router>
                     <div className={classes.root}>
