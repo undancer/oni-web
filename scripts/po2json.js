@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const clearKey = (input) => {
-    let m = /^STRINGS\.(?<type>ELEMENTS|BUILDINGS)(\.PREFABS)?\.(?<name>[^.]+)\.(?<key>NAME|DESC)$/g.exec(input);
+    let m = /^STRINGS\.(?<type>ELEMENTS|BUILDINGS)(\.PREFABS)?\.(?<name>[^.]+)\.(?<key>NAME|DESC|EFFECT)$/g.exec(input);
 
     if (m) {
         // @ts-ignore
