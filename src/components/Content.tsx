@@ -1,7 +1,8 @@
 import React from "react";
-import {createStyles, Grid, makeStyles, Theme, Typography,} from "@material-ui/core";
+import {createStyles, Grid, makeStyles, MenuItem, Select, Theme, Typography,} from "@material-ui/core";
 import {getData} from "../stores";
 import ElementsPanel from "./ElementsPanel";
+import BuildingsPanel from "./BuildingsPanel";
 
 
 let useStyles = makeStyles((theme: Theme) => createStyles({
@@ -21,9 +22,10 @@ let Content: React.FC = (props: any) => {
     const classes = useStyles();
     const version = process.env.REACT_APP_VERSION;
 
-    const [target, setTarget] = React.useState("elements");
+    const targets = ["elements", "buildings"];
 
-    // buildings
+    //elements buildings
+    const [target, setTarget] = React.useState("buildings");
 
     const prefix = {
         "buildings": "STRINGS.BUILDINGS.PREFABS.",
@@ -32,7 +34,18 @@ let Content: React.FC = (props: any) => {
 
     const entities = getData(target);
 
-    const Panel = ElementsPanel;
+    let Panel;
+    if (target === "elements") {
+        Panel = ElementsPanel;
+    } else if (target === "buildings") {
+        Panel = BuildingsPanel;
+    } else {
+        Panel = ElementsPanel;
+    }
+
+    const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+        setTarget(event.target.value as string);
+    };
 
     return (
         <main className={classes.content}>
@@ -61,6 +74,28 @@ let Content: React.FC = (props: any) => {
             </Grid>
 
             {/*<Toolbar></Toolbar>*/}
+
+            <Grid container
+                  direction="row"
+                  justify={"center"}
+                  className={classes.toolbar2}
+            >
+                <Select
+                    // labelId="demo-simple-select-outlined-label"
+                    // id="demo-simple-select-outlined"
+                    value={target}
+                    onChange={handleChange}
+                    // labelWidth={labelWidth}
+                >
+                    {
+                        targets.map(target => (
+                            <MenuItem key={target} value={target}>
+                                {target}
+                            </MenuItem>
+                        ))
+                    }
+                </Select>
+            </Grid>
 
 
             <Panel data={entities}/>
