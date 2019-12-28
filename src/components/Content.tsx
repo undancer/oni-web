@@ -4,6 +4,7 @@ import {getData} from "../stores";
 import ElementsPanel from "./ElementsPanel";
 import BuildingsPanel from "./BuildingsPanel";
 import TargetSelection from "./TargetSelection";
+import _ from "underscore";
 
 
 let useStyles = makeStyles((theme: Theme) => createStyles({
