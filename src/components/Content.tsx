@@ -3,6 +3,7 @@ import {createStyles, Grid, makeStyles, MenuItem, Select, Theme, Typography,} fr
 import {getData} from "../stores";
 import ElementsPanel from "./ElementsPanel";
 import BuildingsPanel from "./BuildingsPanel";
+import TargetSelection from "./TargetSelection";
 
 
 let useStyles = makeStyles((theme: Theme) => createStyles({
@@ -26,12 +27,7 @@ let Content: React.FC = (props: any) => {
 
     //elements buildings
     const [target, setTarget] = React.useState("buildings");
-
-    const prefix = {
-        "buildings": "STRINGS.BUILDINGS.PREFABS.",
-        "elements": "STRINGS.ELEMENTS.STATE.",
-    };
-
+    
     const entities = getData(target);
 
     let Panel;
@@ -90,7 +86,7 @@ let Content: React.FC = (props: any) => {
                     {
                         targets.map(target => (
                             <MenuItem key={target} value={target}>
-                                {target}
+                                <TargetSelection id={target}/>
                             </MenuItem>
                         ))
                     }
