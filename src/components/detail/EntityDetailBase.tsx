@@ -13,8 +13,15 @@ const EntityDetailBase: React.FC<EntityDetailBaseProps> = (props) => {
     const {name} = props;
     const src = image(name);
 
-    const effect = getString((name + '.EFFECT').toLowerCase());
-    const desc = getString((name + '.DESC').toLowerCase());
+    let effect: string = getString((name + '.EFFECT').toLowerCase());
+    if (effect) {
+        effect = effect.split('\n').map(line => '<p>' + line + '</p>').join('\n');
+    }
+
+    let desc: string = getString((name + '.DESC').toLowerCase());
+    if (desc) {
+        desc = desc.split('\n').map(line => '<p>' + line + '</p>').join('\n');
+    }
 
     return (
         <>
