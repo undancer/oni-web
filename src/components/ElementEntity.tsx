@@ -47,8 +47,11 @@ let ElementEntity: React.FC<ElementProps> = (props: ElementProps) => {
         <a href={'/details/' + name} onClick={handleClick} className={classes.a}>
             <Paper className={classes.paper}>
                 <EntityImage size={8} src={src} alt={name}/>
-                <EntityText id={`STRINGS.ELEMENTS.${name}.NAME`.toUpperCase()}
-                            variant="body2" display="block" gutterBottom
+                <EntityText
+                    id={`${name}.name`.toLowerCase()}
+                    variant="body2"
+                    display="block"
+                    gutterBottom
                 />
             </Paper>
         </a>
