@@ -26,8 +26,8 @@ let Content: React.FC = (props: any) => {
     const targets = ["elements", "buildings"];
 
     //elements buildings
-    const [target, setTarget] = React.useState("buildings");
-    
+    const [target, setTarget] = React.useState(_.first(targets));
+
     const entities = getData(target);
 
     let Panel;

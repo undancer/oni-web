@@ -26,6 +26,25 @@ export let getData = (target: string) => {
     return [];
 };
 
+export let getEntity = (id: string) => {
+
+    let result: any = null;
+
+    Object.entries(data).forEach(([key, value]) => {
+        if (result == null) {
+            // @ts-ignore
+            let _data: [any] = value();
+            let _result = _data.find((entity) => entity.Id === id);
+            if (_result != null) {
+                result = {..._result, type: key}
+            }
+        }
+    });
+
+    return result;
+
+};
+
 let data: any = {
     elements: elements,
     buildings: buildings,
