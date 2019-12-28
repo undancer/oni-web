@@ -81,11 +81,11 @@ let EntityDetail: React.FC = () => {
                 <EntityDetailBase name={name}/>
 
                 {
-                    data.type === "element" && (<EntityTagsPanel data={data}/>)
+                    data.type === "elements" && (<EntityTagsPanel data={data}/>)
                 }
 
                 {
-                    data.type === "element" && (<ElementPhaseTransitionPanel data={data}/>)
+                    data.type === "elements" && (<ElementPhaseTransitionPanel data={data}/>)
                 }
 
             </Grid>
