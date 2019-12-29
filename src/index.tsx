@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from 'react';
+import React, {Fragment, lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
@@ -7,9 +7,11 @@ import Loading from "./Loading";
 const App = lazy(() => import("./App"));
 
 let Root = () => (
-    <Suspense fallback={<Loading/>}>
-        <App/>
-    </Suspense>
+    <Fragment>
+        <Suspense fallback={<Loading/>}>
+            <App/>
+        </Suspense>
+    </Fragment>
 );
 
 ReactDOM.render(<Root/>, document.getElementById('root'));
