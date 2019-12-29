@@ -1,19 +1,16 @@
-import React from "react";
+import React, {Fragment} from "react";
 import {createStyles, Grid, makeStyles, MenuItem, Select, Theme, Typography,} from "@material-ui/core";
 import {getData} from "../stores";
 import ElementsPanel from "./ElementsPanel";
 import BuildingsPanel from "./BuildingsPanel";
 import TargetSelection from "./TargetSelection";
 import _ from "underscore";
+import ToolbarC from "./Toolbar";
+import {AppContext} from "../App";
 
 
 let useStyles = makeStyles((theme: Theme) => createStyles({
-        toolbar: theme.mixins.toolbar,
-        content: {
-            // flexGrow: 1,
-            // backgroundColor: theme.palette.background.default,
-            // padding: theme.spacing(2),
-        },
+
         toolbar2: {
             margin: theme.spacing(2),
         },
@@ -48,11 +45,11 @@ let Content: React.FC = (props: any) => {
         setTarget(event.target.value as string);
     };
 
+    const context = React.useContext(AppContext);
+    console.log(context);
 
     return (
-        <main className={classes.content}>
-            <div className={classes.toolbar}/>
-
+        <Fragment>
             {/*<Breadcrumbs aria-label="breadcrumb">*/}
             {/*    <Link color="inherit" href="/" onClick={handleClick1}>*/}
             {/*        Material-UI*/}
@@ -78,7 +75,7 @@ let Content: React.FC = (props: any) => {
                 </Typography>
             </Grid>
 
-            {/*<Toolbar></Toolbar>*/}
+            <ToolbarC></ToolbarC>
 
 
             <Grid container
@@ -118,7 +115,7 @@ let Content: React.FC = (props: any) => {
             {/*    accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.*/}
             {/*</Typography>*/}
             {props.children}
-        </main>
+        </Fragment>
     )
 };
 export default Content;

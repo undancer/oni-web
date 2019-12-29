@@ -19,6 +19,7 @@ import {IntlProvider} from "react-intl";
 import {strings} from "./assets/data/strings";
 import {create} from "jss";
 import DetailContainer from "./containers/detail/DetailContainer";
+import NotFound from "./components/NotFound";
 
 const drawerWidth = 420;
 
@@ -40,6 +41,11 @@ const useStyles = makeStyles((theme: Theme) =>
             width: drawerWidth,
         },
         toolbar: theme.mixins.toolbar,
+        content: {
+            // flexGrow: 1,
+            // backgroundColor: theme.palette.background.default,
+            // padding: theme.spacing(2),
+        },
         grow: {
             flexGrow: 1,
         },
@@ -127,9 +133,13 @@ const useStyles = makeStyles((theme: Theme) =>
         version: {
             margin: theme.spacing(1 / 2),
             color: theme.palette.common.white,
-        }
+        },
     }),
 );
+
+const defaultValue = {name: 'default'};
+
+export const AppContext = React.createContext(defaultValue);
 
 const App: React.FC = () => {
     let classes = useStyles();
@@ -143,50 +153,68 @@ const App: React.FC = () => {
 
     const version = process.env.REACT_APP_VERSION;
 
+    let stores = {name: 'foo'};
 
     return (
-        <IntlProvider locale={locale} messages={messages}>
-            <StylesProvider jss={jss}>
-                <Router>
-                    <div className={classes.root}>
-                        <CssBaseline/>
-                        <AppBar position="fixed" className={classes.appBar}>
-                            <Toolbar>
-                                <Typography className={classes.title} variant="h6" noWrap>
-                                    ONI WIKI
-                                    <Typography className={classes.version} variant="caption" noWrap>
-                                        v{version}
+        <AppContext.Provider value={stores}>
+            <IntlProvider locale={locale} messages={messages}>
+                <StylesProvider jss={jss}>
+                    <Router>
+                        <div className={classes.root}>
+                            <CssBaseline/>
+                            <AppBar position="fixed" className={classes.appBar}>
+                                <Toolbar>
+                                    <Typography className={classes.title} variant="h6" noWrap>
+                                        ONI WIKI
+                                        <Typography className={classes.version} variant="caption" noWrap>
+                                            v{version}
+                                        </Typography>
                                     </Typography>
-                                </Typography>
 
-                                {/*<Search/>*/}
-                            </Toolbar>
-                        </AppBar>
-                        <Content>
-                        </Content>
-                        <Drawer
-                            className={classes.drawer}
-                            variant="permanent"
-                            classes={{
-                                paper: classes.drawerPaper,
-                            }}
-                            anchor="right"
-                        >
-                            <div className={classes.toolbar}/>
-                            <Switch>
+                                    {/*<Search/>*/}
+                                </Toolbar>
+                            </AppBar>
+
+                            <main className={classes.content}>
+                                <div className={classes.toolbar}/>
                                 <Route exact path="/">
-                                    <Readme/>
+                                    <Content>
+                                    </Content>
                                 </Route>
                                 <Route path="/details/:name">
                                     {/*<EntityDetail/>*/}
-                                    <DetailContainer/>
+                                    <Content>
+                                    </Content>
                                 </Route>
-                            </Switch>
-                        </Drawer>
-                    </div>
-                </Router>
-            </StylesProvider>
-        </IntlProvider>
+                                <Route>
+                                    <NotFound/>
+                                </Route>
+                            </main>
+
+                            <Drawer
+                                className={classes.drawer}
+                                variant="permanent"
+                                classes={{
+                                    paper: classes.drawerPaper,
+                                }}
+                                anchor="right"
+                            >
+                                <div className={classes.toolbar}/>
+                                <Switch>
+                                    <Route exact path="/">
+                                        <Readme/>
+                                    </Route>
+                                    <Route path="/details/:name">
+                                        {/*<EntityDetail/>*/}
+                                        <DetailContainer/>
+                                    </Route>
+                                </Switch>
+                            </Drawer>
+                        </div>
+                    </Router>
+                </StylesProvider>
+            </IntlProvider>
+        </AppContext.Provider>
     );
 };
 
