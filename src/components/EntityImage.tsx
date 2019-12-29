@@ -13,8 +13,9 @@ let useStyles = makeStyles((theme: Theme) =>
             image: (props: { size: number }) => ({
                 maxWidth: theme.spacing(props.size),
                 maxHeight: theme.spacing(props.size),
-                // width: theme.spacing(props.size),
-                // height: theme.spacing(props.size),
+                width: theme.spacing(props.size + 2),
+                height: theme.spacing(props.size + 2),
+                margin: theme.spacing(1),
             }),
         }
     )
@@ -23,12 +24,12 @@ let useStyles = makeStyles((theme: Theme) =>
 let EntityImage: React.FC<EntityImageProps & {
     className?: string;
 }> = (props) => {
-    let {src, alt, size} = props;
+    let {src, alt, size, ...others} = props;
     size = size || 1;
     let classes = useStyles({size});
     return (
         <Fragment>
-            <img src={src} alt={alt} className={classes.image} {...props}/>
+            <img src={src} alt={alt} className={classes.image} {...others}/>
         </Fragment>
     )
 };

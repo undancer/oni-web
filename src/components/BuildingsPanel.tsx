@@ -1,6 +1,6 @@
 import React from "react";
 import {createStyles, Grid, makeStyles, Theme} from "@material-ui/core";
-import BuildingEntity from "./BuildingEntity";
+import Entity from "../containers/entity/Entity";
 
 
 let useStyles = makeStyles((theme: Theme) => createStyles({
@@ -34,7 +34,6 @@ let ElementsPanel: React.FC<{ data: any }> = (props) => {
 
     return (
         <>
-
             <Grid container
                   direction="row"
                   justify="center"
@@ -43,7 +42,7 @@ let ElementsPanel: React.FC<{ data: any }> = (props) => {
             >
 
                 {
-                    entities.map(entity => <BuildingEntity key={entity.Id} name={entity.Id}/>)
+                    entities.map(({Id}) => <Entity key={Id} name={Id} href={"/details/" + Id} size={8}/>)
                 }
 
             </Grid>

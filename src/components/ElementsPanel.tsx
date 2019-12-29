@@ -1,7 +1,7 @@
 import React from "react";
 import {createStyles, Grid, makeStyles, MenuItem, Select, Theme} from "@material-ui/core";
 import {FormattedMessage} from "react-intl";
-import ElementEntity from "./ElementEntity";
+import Entity from "../containers/entity/Entity";
 
 
 let useStyles = makeStyles((theme: Theme) => createStyles({
@@ -65,7 +65,7 @@ let ElementsPanel: React.FC<{ data: any }> = (props) => {
             >
 
                 {
-                    entities.map(entity => <ElementEntity key={entity.Id} name={entity.Id}/>)
+                    entities.map(({Id}) => <Entity key={Id} name={Id} href={"/details/" + Id} size={8}/>)
                 }
 
             </Grid>
