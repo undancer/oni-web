@@ -146,7 +146,7 @@ const App: React.FC = () => {
                         <AppBar position="fixed" className={classes.appBar}>
                             <Toolbar>
                                 <Typography className={classes.title} variant="h6" noWrap>
-                                    Material-UI
+                                    ONI WIKI
                                 </Typography>
                                 {/*<Search/>*/}
                             </Toolbar>
