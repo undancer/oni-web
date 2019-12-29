@@ -11,12 +11,14 @@ let elements = (state: string = "vacuum") => {
             )
             && !_.include(item.Tags, 'Special')
         )
-    );
+    )
+        .sort((left, right) => left.Id.localeCompare(right.Id))
 };
 
 let buildings = () => {
     console.log("buildings");
-    return _.toArray(_buildings);
+    return _.filter(_buildings, item => item !== null)
+        .sort((left, right) => left.Id.localeCompare(right.Id))
 };
 
 export let getData = (target: string) => {
