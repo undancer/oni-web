@@ -11,10 +11,11 @@ const useStyles = makeStyles(
                 color: theme.palette.text.primary,
                 textDecoration: "none",
             },
-            card: {
-                width: theme.spacing(10),
-                margin: theme.spacing(1 / 2)
-            },
+            card: ({size}) => ({
+                width: theme.spacing(size + 2),
+                margin: theme.spacing(1 / 2),
+                overflow: "inherit",
+            }),
             image: ({size}) => ({
                 width: theme.spacing(size + 2),
                 height: theme.spacing(size + 2),
@@ -26,7 +27,7 @@ const useStyles = makeStyles(
             text: ({size}) => ({
                 width: theme.spacing(size),
                 height: theme.spacing(size * 2 / 4),
-                margin: theme.spacing(1),
+                margin: theme.spacing(0, 1, 1, 1),
                 textAlign: "center",
                 display: "block",
             }),
@@ -36,12 +37,14 @@ const useStyles = makeStyles(
 
 interface EntityProps {
     name: string
+    text?: string
     size?: number
+    elevation?: number
     href: string
 }
 
 const Entity: React.FC<EntityProps> = (props) => {
-    let {name, size, href, ...others} = props;
+    let {name, text, size, href, elevation, ...others} = props;
     size = size || 1;
     const classes = useStyles({size});
     const history = useHistory();
@@ -58,13 +61,21 @@ const Entity: React.FC<EntityProps> = (props) => {
 
     return (
         <Fragment>
-            <Card className={classes.card}>
+            <Card elevation={elevation} className={classes.card}>
                 <a href={href} onClick={handleClick} className={classes.a}>
                     <img src={src} alt={name} className={classes.image} {...others}/>
-                    <EntityText id={`${name}.name`.toLowerCase()}
-                                variant={"body2"}
-                                className={classes.text}
-                    />
+                    {
+                        (text == null) && (<EntityText id={`${name}.name`.toLowerCase()}
+                                                       variant={"body2"}
+                                                       className={classes.text}
+                        />)
+                    }
+                    {
+                        (text != null) && (<EntityText value={text}
+                                                       variant={"caption"}
+                                                       className={classes.text}
+                        />)
+                    }
                 </a>
             </Card>
         </Fragment>

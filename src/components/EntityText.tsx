@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment} from "react";
 import {useIntl} from "react-intl";
 import {Typography, TypographyProps} from "@material-ui/core";
 import {fix} from "../utils/strings";
@@ -25,9 +25,9 @@ let EntityText: React.FC<EntityTextProps & TypographyProps> = (props) => {
     value = fix(value);
 
     return (
-        <>
+        <Fragment>
             <Typography {...other} dangerouslySetInnerHTML={{__html: value}}/>
-        </>
+        </Fragment>
     )
 };
 export default EntityText;
