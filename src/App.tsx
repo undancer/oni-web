@@ -124,6 +124,10 @@ const useStyles = makeStyles((theme: Theme) =>
             height: 28,
             margin: 4,
         },
+        version: {
+            margin: theme.spacing(1 / 2),
+            color: theme.palette.common.white,
+        }
     }),
 );
 
@@ -137,6 +141,9 @@ const App: React.FC = () => {
         plugins: [...jssPreset().plugins],
     });
 
+    const version = process.env.REACT_APP_VERSION;
+
+
     return (
         <IntlProvider locale={locale} messages={messages}>
             <StylesProvider jss={jss}>
@@ -147,7 +154,11 @@ const App: React.FC = () => {
                             <Toolbar>
                                 <Typography className={classes.title} variant="h6" noWrap>
                                     ONI WIKI
+                                    <Typography className={classes.version} variant="caption" noWrap>
+                                        v{version}
+                                    </Typography>
                                 </Typography>
+
                                 {/*<Search/>*/}
                             </Toolbar>
                         </AppBar>

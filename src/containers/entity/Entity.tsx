@@ -30,6 +30,7 @@ const useStyles = makeStyles(
                 margin: theme.spacing(0, 1, 1, 1),
                 textAlign: "center",
                 display: "block",
+                fontSize: "0.75rem"
             }),
         }
     )

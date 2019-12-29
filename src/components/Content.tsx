@@ -10,13 +10,17 @@ import _ from "underscore";
 let useStyles = makeStyles((theme: Theme) => createStyles({
         toolbar: theme.mixins.toolbar,
         content: {
-            flexGrow: 1,
-            backgroundColor: theme.palette.background.default,
-            padding: theme.spacing(2),
+            // flexGrow: 1,
+            // backgroundColor: theme.palette.background.default,
+            // padding: theme.spacing(2),
         },
         toolbar2: {
             margin: theme.spacing(2),
         },
+        version: {
+            margin: theme.spacing(1, 1, 1, -1),
+            color: theme.palette.text.disabled,
+        }
     })
 );
 
@@ -44,6 +48,7 @@ let Content: React.FC = (props: any) => {
         setTarget(event.target.value as string);
     };
 
+
     return (
         <main className={classes.content}>
             <div className={classes.toolbar}/>
@@ -64,6 +69,9 @@ let Content: React.FC = (props: any) => {
                 justify="flex-end"
                 alignItems="flex-start"
                 spacing={1}
+                item
+                xs={12}
+                className={classes.version}
             >
                 <Typography variant={"body2"}>
                     version: {version}
@@ -71,6 +79,7 @@ let Content: React.FC = (props: any) => {
             </Grid>
 
             {/*<Toolbar></Toolbar>*/}
+
 
             <Grid container
                   direction="row"

@@ -1,23 +1,12 @@
 import React, {Fragment} from "react";
-import Detail from "./Detail";
 import DetailBase from "./DetailBase";
 import {useParams} from "react-router-dom";
-import png from "../../assets/images/icons/status_item_no_research_selected.png";
-import {
-    createStyles,
-    makeStyles,
-    Paper,
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableRow,
-    Theme
-} from "@material-ui/core";
+import {createStyles, makeStyles, Theme} from "@material-ui/core";
 import ElementPhaseTransition from "./ElementPhaseTransition";
 import DetailPanel from "./DetailPanel";
 import {getEntity} from "../../stores";
 import ElementTag from "./ElementTag";
+import BuildingAttribute from "./BuildingAttribute";
 
 const useStyles = makeStyles(
     (theme: Theme) => createStyles(
@@ -52,56 +41,17 @@ const DetailContainer: React.FC = () => {
                 <ElementPhaseTransition element={name}/>
             </DetailPanel>
 
-            <Paper className={classes.paper}>
-                <TableContainer>
-                    <Table>
-                        <TableBody>
-                            <TableRow>
-                                <TableCell align={"left"}>
-                                    <img width={16} src={png}/>
-                                </TableCell>
-                                <TableCell align={"right"}>
-                                    test
-                                </TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell align={"left"}>
-                                    <img width={16} src={png}/>
-                                </TableCell>
-                                <TableCell align={"right"}>
-                                    test
-                                </TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell align={"left"}>
-                                    <img width={16} src={png}/>
-                                </TableCell>
-                                <TableCell align={"right"}>
-                                    test
-                                </TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell align={"left"}>
-                                    <img width={16} src={png}/>
-                                </TableCell>
-                                <TableCell align={"right"}>
-                                    test
-                                </TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell align={"left"}>
-                                    <img width={16} src={png}/>
-                                </TableCell>
-                                <TableCell align={"right"}>
-                                    test
-                                </TableCell>
-                            </TableRow>
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            </Paper>
+            <DetailPanel type={"buildings"} value={type}>
+                <BuildingAttribute element={name}/>
+            </DetailPanel>
 
-            <Detail/>
+            <DetailPanel type={"buildings"} value={type}>
+                test
+            </DetailPanel>
+
+            <DetailPanel type={"buildings"} value={type}>
+                test
+            </DetailPanel>
 
         </Fragment>
     )
