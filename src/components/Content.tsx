@@ -6,7 +6,7 @@ import BuildingsPanel from "./BuildingsPanel";
 import TargetSelection from "./TargetSelection";
 import _ from "underscore";
 import ToolbarC from "./Toolbar";
-import {AppContext} from "../App";
+import {useAppContext} from "../modules/context";
 
 
 let useStyles = makeStyles((theme: Theme) => createStyles({
@@ -25,7 +25,9 @@ let Content: React.FC = (props: any) => {
     const classes = useStyles();
     const version = process.env.REACT_APP_VERSION;
 
-    const targets = ["elements", "buildings"];
+    const {state, dispatch} = useAppContext();
+
+    const targets = (state as any).type as [string];
 
     //elements buildings
     const [target, setTarget] = React.useState(_.first(targets) as string);
@@ -43,10 +45,8 @@ let Content: React.FC = (props: any) => {
 
     const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
         setTarget(event.target.value as string);
+        dispatch({type: 'test'});
     };
-
-    const context = React.useContext(AppContext);
-    console.log(context);
 
     return (
         <Fragment>

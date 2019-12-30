@@ -20,6 +20,8 @@ import {strings} from "./assets/data/strings";
 import {create} from "jss";
 import DetailContainer from "./containers/detail/DetailContainer";
 import NotFound from "./components/NotFound";
+import {StateProvider} from "./modules/context";
+import {createReducer, createState} from "./config";
 
 const drawerWidth = 420;
 
@@ -137,9 +139,6 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-const defaultValue = {name: 'default'};
-
-export const AppContext = React.createContext(defaultValue);
 
 const App: React.FC = () => {
     let classes = useStyles();
@@ -153,10 +152,12 @@ const App: React.FC = () => {
 
     const version = process.env.REACT_APP_VERSION;
 
-    let stores = {name: 'foo'};
+    const reducer = createReducer();
+
+    const initialState = createState();
 
     return (
-        <AppContext.Provider value={stores}>
+        <StateProvider reducer={reducer} initialState={initialState}>
             <IntlProvider locale={locale} messages={messages}>
                 <StylesProvider jss={jss}>
                     <Router>
@@ -214,7 +215,7 @@ const App: React.FC = () => {
                     </Router>
                 </StylesProvider>
             </IntlProvider>
-        </AppContext.Provider>
+        </StateProvider>
     );
 };
 
