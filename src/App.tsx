@@ -178,18 +178,20 @@ const App: React.FC = () => {
 
                             <main className={classes.content}>
                                 <div className={classes.toolbar}/>
-                                <Route exact path="/">
-                                    <Content>
-                                    </Content>
-                                </Route>
-                                <Route path="/details/:name">
-                                    {/*<EntityDetail/>*/}
-                                    <Content>
-                                    </Content>
-                                </Route>
-                                <Route>
-                                    <NotFound/>
-                                </Route>
+                                <Switch>
+                                    <Route exact path="/">
+                                        <Content>
+                                        </Content>
+                                    </Route>
+                                    <Route path="/details/:name">
+                                        {/*<EntityDetail/>*/}
+                                        <Content>
+                                        </Content>
+                                    </Route>
+                                    <Route>
+                                        <NotFound/>
+                                    </Route>
+                                </Switch>
                             </main>
 
                             <Drawer
