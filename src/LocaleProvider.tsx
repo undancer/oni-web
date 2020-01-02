@@ -10,7 +10,7 @@ const LocaleProvider: React.FC<PropsWithChildren<LocaleProviderProps>> = (props)
     const {lang, children} = props;
     const Lazy = React.lazy(
         async () => {
-            const json: any = await import(`./assets/strings/${lang.replace('-', '_')}.json`);
+            const json: any = await import( /* webpackChunkName: "lang/[index][request]" */ `./assets/strings/${lang.replace('-', '_')}.json`);
             return {
                 default: () => (
                     <IntlProvider locale={lang} messages={json} defaultLocale={'en'}>{children}</IntlProvider>)
