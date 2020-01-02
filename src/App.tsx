@@ -21,6 +21,7 @@ import NotFound from "./components/NotFound";
 import {StateProvider} from "./modules/context";
 import {createReducer, createState} from "./config";
 import LocaleProvider from "./LocaleProvider";
+import {createGenerateClassName} from '@material-ui/core/styles';
 
 const drawerWidth = 420;
 
@@ -162,10 +163,15 @@ const App: React.FC = () => {
 
     const initialState = createState();
 
+    const generateClassName = createGenerateClassName({
+        disableGlobal: true,
+        productionPrefix: "oni",
+    });
+
     return (
         <StateProvider reducer={reducer} initialState={initialState}>
             <LocaleProvider lang={lang}>
-                <StylesProvider jss={jss}>
+                <StylesProvider jss={jss} generateClassName={generateClassName}>
                     <Router>
                         <div className={classes.root}>
                             <CssBaseline/>
