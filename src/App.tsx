@@ -164,8 +164,8 @@ const App: React.FC = () => {
     const initialState = createState();
 
     const generateClassName = createGenerateClassName({
-        disableGlobal: true,
-        productionPrefix: "oni",
+        // disableGlobal: true,
+        productionPrefix: "oni-",
     });
 
     return (
