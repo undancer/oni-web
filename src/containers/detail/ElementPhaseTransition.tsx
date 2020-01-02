@@ -3,8 +3,8 @@ import {createStyles, Grid, makeStyles, Theme} from "@material-ui/core";
 import {getEntity} from "../../stores";
 import Entity from "../entity/Entity";
 import {ArrowLeft as ArrowLeftIcon, ArrowRight as ArrowRightIcon} from "@material-ui/icons"
-import {getString} from "../../assets/data/strings";
 import {kelvinToCelsius} from "../../utils/temperature";
+import {useIntl} from "react-intl";
 
 const useStyles = makeStyles(
     (theme: Theme) => createStyles(
@@ -28,11 +28,13 @@ const ElementPhaseTransition: React.FC<ElementPhaseTransitionProps> = (props) =>
 
     const classes = useStyles();
 
+    const intl = useIntl();
+
     const entity = getEntity(element);
 
     const currentId = entity.Id;
-
-    let celsius = getString('STRINGS.UI.UNITSUFFIXES.TEMPERATURE.CELSIUS');
+    
+    let celsius = intl.formatMessage({id: 'STRINGS.UI.UNITSUFFIXES.TEMPERATURE.CELSIUS'});
 
     let transitionLeft = entity.lowTempTransitionTarget ? {
         name: entity.lowTempTransitionTarget,

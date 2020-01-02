@@ -1,9 +1,9 @@
 import React, {Fragment} from "react";
 import image from "../../assets/data/image";
 import {Card, CardContent, createStyles, Grid, makeStyles, Paper, Theme, Typography} from "@material-ui/core";
-import {getString} from "../../assets/data/strings";
 import {fix} from "../../utils/strings";
 import Helmet from "react-helmet";
+import {useIntl} from "react-intl";
 
 const useStyles = makeStyles(
     (theme: Theme) => createStyles(
@@ -32,13 +32,15 @@ interface DetailBaseProps {
 
 const DetailBase: React.FC<DetailBaseProps> = (props) => {
     const classes = useStyles();
+    const intl = useIntl();
 
     const {name} = props;
     const src = image(name);
 
-    let title: string = fix(getString((name + '.NAME').toLowerCase()));
+    let title: string = fix(intl.formatMessage({id: `${name}.NAME`.toLowerCase()}));
 
-    let effect: string = (getString((name + '.EFFECT').toLowerCase()));
+    let effect: string = intl.formatMessage({id: `${name}.EFFECT`.toLowerCase()});
+
     if (effect) {
         effect = effect.split('\n')
             .filter(line => line && line.trim() !== '')
@@ -47,7 +49,7 @@ const DetailBase: React.FC<DetailBaseProps> = (props) => {
 
     }
 
-    let desc: string = (getString((name + '.DESC').toLowerCase()));
+    let desc: string = intl.formatMessage({id: `${name}.DESC`.toLowerCase()});
     if (desc) {
         desc = desc.split('\n')
             .filter(line => line && line.trim() !== '')

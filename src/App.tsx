@@ -15,13 +15,12 @@ import {
 } from "@material-ui/core";
 import Readme from "./components/Readme";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import {IntlProvider} from "react-intl";
-import {strings} from "./assets/data/strings";
 import {create} from "jss";
 import DetailContainer from "./containers/detail/DetailContainer";
 import NotFound from "./components/NotFound";
 import {StateProvider} from "./modules/context";
 import {createReducer, createState} from "./config";
+import LocaleProvider from "./LocaleProvider";
 
 const drawerWidth = 420;
 
@@ -143,8 +142,15 @@ const useStyles = makeStyles((theme: Theme) =>
 const App: React.FC = () => {
     let classes = useStyles();
 
-    let locale = navigator.language;
-    let messages: any = strings(locale);
+//    let locale = navigator.language;
+    const search = window.location.search;
+    const params = new URLSearchParams(search);
+    const languages = ['en', 'ko', 'ru', 'zh-CN'];
+    // @ts-ignore
+    let lang: string = params.get('lang');
+    if (languages.indexOf(lang) < 0) {
+        lang = 'zh-CN'
+    }
 
     const jss = create({
         plugins: [...jssPreset().plugins],
@@ -158,7 +164,7 @@ const App: React.FC = () => {
 
     return (
         <StateProvider reducer={reducer} initialState={initialState}>
-            <IntlProvider locale={locale} messages={messages}>
+            <LocaleProvider lang={lang}>
                 <StylesProvider jss={jss}>
                     <Router>
                         <div className={classes.root}>
@@ -216,7 +222,7 @@ const App: React.FC = () => {
                         </div>
                     </Router>
                 </StylesProvider>
-            </IntlProvider>
+            </LocaleProvider>
         </StateProvider>
     );
 };
