@@ -2,6 +2,7 @@ import React from "react";
 import {createStyles, Grid, makeStyles, MenuItem, Select, Theme} from "@material-ui/core";
 import {FormattedMessage} from "react-intl";
 import Entity from "../containers/entity/Entity";
+import _ from "underscore";
 
 
 let useStyles = makeStyles((theme: Theme) => createStyles({
@@ -27,8 +28,21 @@ let ElementsPanel: React.FC<{ data: any }> = (props) => {
 
     const states = ["vacuum", "gas", "liquid", "solid"];
 
-    const entities: [any] = data(state);
-
+    // @ts-ignore
+    const entities = _.filter(data, (item: any) => {
+            return (
+                (
+                    "vacuum" === state
+                    || state === item.State.toLowerCase()
+                )
+                && !_.include(item.Tags, 'Special')
+            )
+        }
+    )
+        .sort((left, right) => {
+            return left.Id.localeCompare(right.Id)
+        });
+    
     const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
         setState(event.target.value as string);
     };

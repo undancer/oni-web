@@ -21,35 +21,23 @@ let buildings = () => {
         .sort((left, right) => left.Id.localeCompare(right.Id))
 };
 
+let data: any = {
+    elements: elements(),
+    buildings: buildings(),
+};
+
+let entities = new Array();
+
+Object.entries(data).forEach(([key, value]) => {
+    entities.push(...(value as []).map((item: any) => ({...item, type: key})))
+});
+
 export let getData = (target: string) => {
-    if (data[target] != null) {
-        return data[target];
-    }
-    return [];
+    return entities.filter(value => (value as { type: string }).type === target)
 };
 
 export let getEntity = (id: string) => {
-
-    let result: any = null;
-
-    Object.entries(data).forEach(([key, value]) => {
-        if (result == null) {
-            // @ts-ignore
-            let _data: [any] = value();
-            let _result = _data.find((entity) => entity.Id === id);
-            if (_result != null) {
-                result = {..._result, type: key}
-            }
-        }
+    return entities.find((value, index) => {
+        return (value as { Id: string }).Id === id
     });
-
-    return result;
-
 };
-
-let data: any = {
-    elements: elements,
-    buildings: buildings,
-};
-
-export default data;

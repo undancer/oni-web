@@ -1,6 +1,7 @@
 import React from "react";
 import {createStyles, Grid, makeStyles, Theme} from "@material-ui/core";
 import Entity from "../containers/entity/Entity";
+import _ from "underscore";
 
 
 let useStyles = makeStyles((theme: Theme) => createStyles({
@@ -26,7 +27,16 @@ let ElementsPanel: React.FC<{ data: any }> = (props) => {
 
     const states = ["vacuum", "gas", "liquid", "solid"];
 
-    const entities: [any] = data(state);
+    // @ts-ignore
+    const entities = _.filter(data, (item: any) => {
+            return (
+                item !== null
+            )
+        }
+    )
+        .sort((left, right) => {
+            return left.Id.localeCompare(right.Id)
+        });
 
     const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
         setState(event.target.value as string);
