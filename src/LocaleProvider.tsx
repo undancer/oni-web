@@ -10,7 +10,11 @@ const LocaleProvider: React.FC<PropsWithChildren<LocaleProviderProps>> = (props)
     const {lang, children} = props;
     const Lazy = React.lazy(
         async () => {
-            const json: any = await import( /* webpackChunkName: "lang/[index]-[request]" */ `./assets/strings/${lang.replace('-', '_')}.json`);
+            const json: Record<string, string> =
+                await import(
+                    /* webpackChunkName: "lang/[index]-[request]" */
+                    `./assets/strings/${lang.replace('-', '_')}.json`
+                    );
             return {
                 default: () => (
                     <IntlProvider locale={lang} messages={json} defaultLocale={'en'}>{children}</IntlProvider>)
@@ -19,8 +23,6 @@ const LocaleProvider: React.FC<PropsWithChildren<LocaleProviderProps>> = (props)
     );
     return (<Lazy/>)
 };
-
-// export default LocaleProvider;
 
 export default React.memo(LocaleProvider);
 
