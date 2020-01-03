@@ -33,7 +33,7 @@ const ElementPhaseTransition: React.FC<ElementPhaseTransitionProps> = (props) =>
     const entity = getEntity(element);
 
     const currentId = entity.Id;
-    
+
     let celsius = intl.formatMessage({id: 'STRINGS.UI.UNITSUFFIXES.TEMPERATURE.CELSIUS'});
 
     let transitionLeft = entity.lowTempTransitionTarget ? {

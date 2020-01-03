@@ -42,7 +42,7 @@ let ElementsPanel: React.FC<{ data: any }> = (props) => {
         .sort((left, right) => {
             return left.Id.localeCompare(right.Id)
         });
-    
+
     const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
         setState(event.target.value as string);
     };

@@ -1,5 +1,11 @@
 import React, {Fragment} from "react";
-import useStyles from "../useStyles";
+import {createStyles, makeStyles, Theme} from "@material-ui/core";
+
+
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({}),
+);
+
 
 let Readme: React.FC = () => {
 
