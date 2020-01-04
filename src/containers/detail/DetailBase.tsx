@@ -41,19 +41,20 @@ const DetailBase: React.FC<DetailBaseProps> = (props) => {
 
     let effect: string = intl.formatMessage({id: `${name}.EFFECT`.toLowerCase()});
 
+
     if (effect) {
         effect = effect.split('\n')
             .filter(line => line && line.trim() !== '')
-            .join("<br />")
+            .join("<br />");
         effect = fix(effect);
-
     }
+
 
     let desc: string = intl.formatMessage({id: `${name}.DESC`.toLowerCase()});
     if (desc) {
         desc = desc.split('\n')
             .filter(line => line && line.trim() !== '')
-            .join("<br />")
+            .join("<br />");
         desc = fix(desc);
     }
 
